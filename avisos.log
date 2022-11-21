@@ -1,0 +1,392 @@
+[2022-11-10 14:41:38] [ ERROR] [BD:61] ERROR: Columna "FEHCA_INGRESO" no encontrada
+Column "FEHCA_INGRESO" not found; SQL statement:
+INSERT INTO PACIENTES (APELLIDO, NOMBRE, EMAIL ,DNI, FEHCA_INGRESO, DOMICILIO_ID) VALUES('Cavallo','Maria', 'mariacavallom@gmail.com' ,'684454', '2022-11-10', 1) [42122-214]
+[2022-11-10 14:50:27] [ INFO ] [PacienteDaoH2:159] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-10 14:50:27] [ ERROR] [PacienteDaoH2:173] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 08:10:09] [ INFO ] [PacienteDaoH2:159] Iniciando la busqueda del paciente con email= 
+[2022-11-11 08:22:45] [ INFO ] [PacienteDaoH2:159] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 08:22:45] [ ERROR] [PacienteDaoH2:173] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 18:57:15] [ INFO ] [OdontologoDaoH2:143] Iniciando la busqueda de todos los odontologos
+[2022-11-11 18:57:15] [ INFO ] [OdontologoDaoH2:150] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-11 19:08:36] [ INFO ] [OdontologoDaoH2:143] Iniciando la busqueda de todos los odontologos
+[2022-11-11 19:08:36] [ INFO ] [OdontologoDaoH2:150] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-11 19:11:04] [ INFO ] [OdontologoDaoH2:143] Iniciando la busqueda de todos los odontologos
+[2022-11-11 19:11:04] [ INFO ] [OdontologoDaoH2:150] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-11 19:26:27] [ INFO ] [OdontologoDaoH2:143] Iniciando la busqueda de todos los odontologos
+[2022-11-11 19:26:27] [ INFO ] [OdontologoDaoH2:150] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-11 19:26:57] [ INFO ] [OdontologoDaoH2:55] Iniciando busqueda del odontologo con ID= 1
+[2022-11-11 19:26:57] [ INFO ] [OdontologoDaoH2:64] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-11 19:27:29] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:27:29] [ ERROR] [PacienteDaoH2:185] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:28:33] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:28:33] [ ERROR] [PacienteDaoH2:185] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:28:41] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-11 19:28:44] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-11 19:28:44] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-11 19:28:45] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-11 19:28:45] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-11 19:28:45] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-11 19:28:54] [ INFO ] [PacienteDaoH2:171] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:28:54] [ ERROR] [PacienteDaoH2:185] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:33:25] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:33:25] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:33:28] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:33:28] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:33:46] [ INFO ] [OdontologoDaoH2:55] Iniciando busqueda del odontologo con ID= 1
+[2022-11-11 19:33:46] [ INFO ] [OdontologoDaoH2:64] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-11 19:34:15] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:34:15] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:23] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:23] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:26] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:26] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:26] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:26] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:26] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:26] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:27] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:27] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:27] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:27] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-11 19:42:27] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-11 19:42:27] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:28:43] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:28:43] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:35:28] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:35:29] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:36:21] [ INFO ] [OdontologoDaoH2:55] Iniciando busqueda del odontologo con ID= 1
+[2022-11-14 08:36:21] [ INFO ] [OdontologoDaoH2:64] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-14 08:48:27] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:48:27] [ ERROR] [PacienteDaoH2:189] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:48:47] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= "mariacavallom@gmail.com"
+[2022-11-14 08:49:00] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= 'mariacavallom@gmail.com'
+[2022-11-14 08:52:00] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= 'mariacavallom@gmail.com'
+[2022-11-14 08:52:08] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:52:08] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:52:17] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= 
+[2022-11-14 08:52:38] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:52:38] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:52:39] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:52:39] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:55:39] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:55:39] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 08:59:32] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 08:59:32] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 10:06:05] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 10:06:05] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 10:07:32] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 10:07:32] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 10:12:48] [ INFO ] [OdontologoDaoH2:55] Iniciando busqueda del odontologo con ID= 1
+[2022-11-14 10:12:48] [ INFO ] [OdontologoDaoH2:64] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-14 10:13:46] [ INFO ] [OdontologoDaoH2:55] Iniciando busqueda del odontologo con ID= 1
+[2022-11-14 10:13:46] [ INFO ] [OdontologoDaoH2:64] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-14 10:23:17] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 10:23:17] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 10:24:00] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 10:24:00] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 10:30:39] [ INFO ] [PacienteDaoH2:175] Iniciando la busqueda del paciente con email= mariacavallom@gmail.com
+[2022-11-14 10:30:39] [ ERROR] [PacienteDaoH2:190] ERROR: Conversión de datos fallida, convirtiendo "DATE to INTEGER"
+Data conversion error converting "DATE to INTEGER" [22018-214]
+[2022-11-14 10:42:23] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@7cfb8e98
+[2022-11-14 10:42:23] [ ERROR] [PacienteDaoH2:35] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?) [21002-214]
+[2022-11-14 10:45:00] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@79ab97fd
+[2022-11-14 10:45:01] [ ERROR] [PacienteDaoH2:35] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?) [21002-214]
+[2022-11-14 10:47:09] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@5f193335
+[2022-11-14 10:47:09] [ ERROR] [PacienteDaoH2:35] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?) [21002-214]
+[2022-11-14 10:47:45] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@1d91fa02
+[2022-11-14 10:47:45] [ ERROR] [PacienteDaoH2:35] ERROR: Parametro "#4" no está fijado
+Parameter "#4" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 10:49:06] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@3111631d
+[2022-11-14 10:49:06] [ ERROR] [PacienteDaoH2:35] ERROR: Parametro "#4" no está fijado
+Parameter "#4" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 10:50:53] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@26275b46
+[2022-11-14 10:50:53] [ ERROR] [PacienteDaoH2:35] ERROR: Parametro "#4" no está fijado
+Parameter "#4" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 10:51:10] [ INFO ] [OdontologoDaoH2:143] Iniciando la busqueda de todos los odontologos
+[2022-11-14 10:51:10] [ INFO ] [OdontologoDaoH2:150] ID: 1 -Matricula: MN8471 -Nombre: Pedro -Apellido: Muelas
+[2022-11-14 12:39:16] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@21cefe92
+[2022-11-14 12:39:16] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:39:16] [ ERROR] [DomicilioDaoH2:39] ERROR: Cannot invoke "com.dh.ProyectoFinal.Entity.Domicilio.getCalle()" because "domicilio" is null
+[2022-11-14 12:39:16] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:40:37] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@4526da72
+[2022-11-14 12:40:37] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:40:37] [ ERROR] [DomicilioDaoH2:39] ERROR: Cannot invoke "com.dh.ProyectoFinal.Entity.Domicilio.getCalle()" because "domicilio" is null
+[2022-11-14 12:40:37] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:45:32] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@71b82341
+[2022-11-14 12:45:32] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:45:32] [ ERROR] [DomicilioDaoH2:39] ERROR: Cannot invoke "com.dh.ProyectoFinal.Entity.Domicilio.getCalle()" because "domicilio" is null
+[2022-11-14 12:45:32] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:45:45] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@1707fbf
+[2022-11-14 12:45:45] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:45:45] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:46:19] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@329b436d
+[2022-11-14 12:46:19] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:46:19] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:48:02] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@2170f203
+[2022-11-14 12:48:02] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:48:02] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:48:17] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@373a703
+[2022-11-14 12:48:17] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:48:18] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:51:48] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@5cb09f
+[2022-11-14 12:51:48] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:51:48] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:55:01] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@3c6b2e84
+[2022-11-14 12:55:01] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:55:01] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 12:59:46] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@69c29355
+[2022-11-14 12:59:46] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 12:59:47] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 13:04:30] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@6e979d85
+[2022-11-14 13:04:30] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:04:30] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 13:08:33] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@56907fb0
+[2022-11-14 13:08:33] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:08:33] [ ERROR] [PacienteDaoH2:45] ERROR: Columna "DOMICILIO" no encontrada
+Column "DOMICILIO" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL, DNI, DOMICILIO, FECHA_INGRESO) VALUES (?,?,?,?,?,?) [42122-214]
+[2022-11-14 13:10:20] [ INFO ] [PacienteDaoH2:62] Iniciando la busqueda del paciente con id = 2
+[2022-11-14 13:10:48] [ INFO ] [PacienteDaoH2:62] Iniciando la busqueda del paciente con id = 1
+[2022-11-14 13:10:48] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 13:10:48] [ INFO ] [PacienteDaoH2:93] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@7afb9952
+[2022-11-14 13:10:48] [ INFO ] [DomicilioDaoH2:83] Iniciando la actualizacion de un domicilio
+[2022-11-14 13:10:48] [ ERROR] [DomicilioDaoH2:96] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 13:10:48] [ ERROR] [PacienteDaoH2:110] ERROR: Error de Sintaxis en sentencia SQL "SELECT PACIENTES [*]SET NOMBRE=?, APELLIDO=?, EMAIL=?, DNI=?, DOMICILIO_ID=?, FECHA_INGRESO=? WHERE ID=?"
+Syntax error in SQL statement "SELECT PACIENTES [*]SET NOMBRE=?, APELLIDO=?, EMAIL=?, DNI=?, DOMICILIO_ID=?, FECHA_INGRESO=? WHERE ID=?"; SQL statement:
+SELECT PACIENTES SET NOMBRE=?, APELLIDO=?, EMAIL=?, DNI=?, DOMICILIO_ID=?, FECHA_INGRESO=? WHERE ID=? [42000-214]
+[2022-11-14 13:16:30] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@48b6d895
+[2022-11-14 13:16:31] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:16:31] [ ERROR] [PacienteDaoH2:45] ERROR: Columna "DOMICILIO" no encontrada
+Column "DOMICILIO" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL, DNI, DOMICILIO, FECHA_INGRESO) VALUES (?,?,?,?,?,?) [42122-214]
+[2022-11-14 13:21:40] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@8f07c5d
+[2022-11-14 13:21:40] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:21:40] [ ERROR] [PacienteDaoH2:45] ERROR: Columna "DOMICILIO" no encontrada
+Column "DOMICILIO" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL, DNI, DOMICILIO, FECHA_INGRESO) VALUES (?,?,?,?,?,?) [42122-214]
+[2022-11-14 13:22:04] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@13e5388c
+[2022-11-14 13:22:04] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:22:04] [ ERROR] [PacienteDaoH2:45] ERROR: Columna "DOMICILIO" no encontrada
+Column "DOMICILIO" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL, DNI, DOMICILIO, FECHA_INGRESO) VALUES (?,?,?,?,?,?) [42122-214]
+[2022-11-14 13:22:29] [ INFO ] [PacienteDaoH2:62] Iniciando la busqueda del paciente con id = 1
+[2022-11-14 13:22:29] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 13:22:29] [ INFO ] [PacienteDaoH2:93] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@1c998b19
+[2022-11-14 13:22:29] [ INFO ] [DomicilioDaoH2:83] Iniciando la actualizacion de un domicilio
+[2022-11-14 13:22:29] [ ERROR] [DomicilioDaoH2:96] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 13:22:29] [ ERROR] [PacienteDaoH2:110] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 13:24:54] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@567dc26a
+[2022-11-14 13:24:55] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:24:55] [ ERROR] [PacienteDaoH2:45] ERROR: Columna "DOMICILIO" no encontrada
+Column "DOMICILIO" not found; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL, DNI, DOMICILIO, FECHA_INGRESO) VALUES (?,?,?,?,?,?) [42122-214]
+[2022-11-14 13:26:57] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@2821c388
+[2022-11-14 13:26:57] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 13:27:15] [ INFO ] [PacienteDaoH2:62] Iniciando la busqueda del paciente con id = 2
+[2022-11-14 13:27:15] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 13:27:15] [ INFO ] [PacienteDaoH2:93] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@4bc83c3e
+[2022-11-14 13:27:15] [ INFO ] [DomicilioDaoH2:83] Iniciando la actualizacion de un domicilio
+[2022-11-14 13:27:15] [ ERROR] [DomicilioDaoH2:96] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 13:27:15] [ ERROR] [PacienteDaoH2:110] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 18:34:49] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@42ab5e16
+[2022-11-14 18:34:49] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:34:49] [ ERROR] [PacienteDaoH2:45] ERROR: Parametro "#7" no está fijado
+Parameter "#7" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 18:35:05] [ INFO ] [PacienteDaoH2:62] Iniciando la busqueda del paciente con id = 2
+[2022-11-14 18:35:14] [ INFO ] [PacienteDaoH2:62] Iniciando la busqueda del paciente con id = 1
+[2022-11-14 18:35:14] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:35:14] [ INFO ] [PacienteDaoH2:95] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@794f038f
+[2022-11-14 18:35:14] [ INFO ] [DomicilioDaoH2:83] Iniciando la actualizacion de un domicilio
+[2022-11-14 18:35:14] [ ERROR] [DomicilioDaoH2:96] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 18:35:14] [ ERROR] [PacienteDaoH2:112] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 18:35:28] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:35:28] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:35:28] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:36:49] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@46117ba1
+[2022-11-14 18:36:49] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:36:49] [ ERROR] [PacienteDaoH2:45] ERROR: Parametro "#7" no está fijado
+Parameter "#7" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 18:38:00] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@1f7d7851
+[2022-11-14 18:38:00] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:38:00] [ ERROR] [PacienteDaoH2:45] ERROR: Parametro "#7" no está fijado
+Parameter "#7" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 18:38:25] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:38:25] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:38:25] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:39:43] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:39:43] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:39:43] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:40:19] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@4a96238c
+[2022-11-14 18:40:19] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:40:19] [ ERROR] [PacienteDaoH2:45] ERROR: Parametro "#7" no está fijado
+Parameter "#7" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 18:41:16] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@1912b08b
+[2022-11-14 18:41:16] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:41:16] [ ERROR] [PacienteDaoH2:45] ERROR: Parametro "#7" no está fijado
+Parameter "#7" is not set; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?,?) [90012-214]
+[2022-11-14 18:41:29] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:41:29] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:41:29] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:42:08] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:42:08] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:42:08] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:42:23] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:42:23] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:42:23] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:42:29] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:42:30] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:42:30] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:42:35] [ INFO ] [PacienteDaoH2:153] Iniciando la busqueda total de pacientes
+[2022-11-14 18:42:35] [ INFO ] [PacienteDaoH2:163] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 18:42:35] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 18:44:38] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@6824d017
+[2022-11-14 18:44:38] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:44:38] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 18:47:16] [ INFO ] [PacienteDaoH2:25] Iniciando la actualizacion del paciente con ID= 4
+[2022-11-14 18:47:16] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 18:47:16] [ ERROR] [PacienteDaoH2:45] ERROR: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+INSERT INTO PACIENTES VALUES (?,?,?,?,?,?) [21002-214]
+[2022-11-14 19:07:15] [ INFO ] [PacienteDaoH2:27] Iniciando la actualizacion del paciente con ID= null
+[2022-11-14 19:07:15] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 19:07:15] [ ERROR] [PacienteDaoH2:47] ERROR: Error de Sintaxis en sentencia SQL "INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL [*]DNI, DOMICILIO_ID, FECHA_INGRESO) VALUES (?,?,?,?,?,?)"; se esperaba ",, )"
+Syntax error in SQL statement "INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL [*]DNI, DOMICILIO_ID, FECHA_INGRESO) VALUES (?,?,?,?,?,?)"; expected ",, )"; SQL statement:
+INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL DNI, DOMICILIO_ID, FECHA_INGRESO) VALUES (?,?,?,?,?,?) [42001-214]
+[2022-11-14 19:08:50] [ INFO ] [PacienteDaoH2:27] Iniciando la actualizacion del paciente con ID= null
+[2022-11-14 19:08:50] [ INFO ] [DomicilioDaoH2:24] Inicio de una operacion de guardado de domicilio
+[2022-11-14 19:09:17] [ INFO ] [PacienteDaoH2:64] Iniciando la busqueda del paciente con id = 1
+[2022-11-14 19:09:17] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 19:09:17] [ INFO ] [PacienteDaoH2:100] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@1361bc2d
+[2022-11-14 19:09:17] [ INFO ] [DomicilioDaoH2:83] Iniciando la actualizacion de un domicilio
+[2022-11-14 19:09:17] [ ERROR] [DomicilioDaoH2:96] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 19:09:17] [ ERROR] [PacienteDaoH2:116] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-14 19:09:26] [ INFO ] [PacienteDaoH2:157] Iniciando la busqueda total de pacientes
+[2022-11-14 19:09:26] [ INFO ] [PacienteDaoH2:167] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 19:09:26] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 19:09:26] [ INFO ] [PacienteDaoH2:167] ID: 2 -Nombre: Lorentelo -Apellido: Pedro -Matricula: pedrolorentelo@gmail.com
+[2022-11-14 19:09:26] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 19:09:41] [ INFO ] [PacienteDaoH2:157] Iniciando la busqueda total de pacientes
+[2022-11-14 19:09:41] [ INFO ] [PacienteDaoH2:167] ID: 1 -Nombre: Cavallo -Apellido: Maria -Matricula: mariacavallom@gmail.com
+[2022-11-14 19:09:41] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-14 19:09:41] [ INFO ] [PacienteDaoH2:167] ID: 2 -Nombre: Lorentelo -Apellido: Pedro -Matricula: pedrolorentelo@gmail.com
+[2022-11-14 19:09:41] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-15 19:16:01] [ INFO ] [PacienteDaoH2:64] Iniciando la busqueda del paciente con id = 1
+[2022-11-15 19:16:01] [ INFO ] [DomicilioDaoH2:55] Iniciando la busqueda de todos los domicilios
+[2022-11-15 19:16:01] [ INFO ] [PacienteDaoH2:100] Iniciando la actualizacion del paciente = com.dh.ProyectoFinal.Entity.Paciente@370f63b9
+[2022-11-15 19:16:01] [ INFO ] [DomicilioDaoH2:83] Iniciando la actualizacion de un domicilio
+[2022-11-15 19:16:01] [ ERROR] [DomicilioDaoH2:96] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-15 19:16:01] [ ERROR] [PacienteDaoH2:116] ERROR: Cannot invoke "java.lang.Integer.intValue()" because the return value of "com.dh.ProyectoFinal.Entity.Domicilio.getId()" is null
+[2022-11-15 19:31:43] [ INFO ] [OdontologoDaoH2:21] Inicialización de pedido de incorporación de odontólogos
+[2022-11-15 19:31:54] [ INFO ] [OdontologoDaoH2:21] Inicialización de pedido de incorporación de odontólogos
+[2022-11-15 19:32:13] [ INFO ] [OdontologoDaoH2:21] Inicialización de pedido de incorporación de odontólogos
+[2022-11-15 19:32:35] [ INFO ] [OdontologoDaoH2:21] Inicialización de pedido de incorporación de odontólogos
+[2022-11-16 09:34:18] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de guardado del paciente con apellido= Lorentelo
+[2022-11-16 09:34:18] [ INFO ] [DomicilioDAOH2:23] Inicio de una operación de guardar de domicilio
+[2022-11-16 09:35:44] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de guardado del paciente con apellido= Lorentelo
+[2022-11-16 09:35:45] [ INFO ] [DomicilioDAOH2:23] Inicio de una operación de guardar de domicilio
+[2022-11-16 09:36:58] [ INFO ] [PacienteDAOH2:62] Iniciando la busqueda del paciente con id=3
+[2022-11-16 09:36:58] [ INFO ] [DomicilioDAOH2:57] Iniciando la busqueda de un domicilio con id=3
+[2022-11-16 09:36:58] [ INFO ] [PacienteDAOH2:96] Iniciando la actualización del paciente con id=3
+[2022-11-16 09:36:58] [ INFO ] [DomicilioDAOH2:87] Iniciando la actualización de un domicilio
+[2022-11-16 09:40:21] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de guardado del paciente con apellido= Lorentelo
+[2022-11-16 09:40:21] [ INFO ] [DomicilioDAOH2:23] Inicio de una operación de guardar de domicilio
+[2022-11-16 09:53:58] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Pedro
+[2022-11-16 09:54:39] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de guardado del paciente con apellido= Lorentelo
+[2022-11-16 09:54:39] [ INFO ] [DomicilioDAOH2:23] Inicio de una operación de guardar de domicilio
+[2022-11-16 09:58:45] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Pedro
+[2022-11-16 09:58:54] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Pedro
+[2022-11-16 09:59:14] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Juan
+[2022-11-16 09:59:15] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Juan
+[2022-11-16 09:59:15] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Juan
+[2022-11-16 10:03:24] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-16 14:30:05] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Maria
+[2022-11-16 14:30:22] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Maria
+[2022-11-16 14:30:55] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Pedro
+[2022-11-16 14:31:12] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Luciana
+[2022-11-16 14:31:42] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Marta
+[2022-11-16 14:55:11] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Teduele
+[2022-11-16 17:00:16] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Laura
+[2022-11-17 13:45:23] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de guardado del paciente con apellido= Lorentelo
+[2022-11-17 13:45:23] [ INFO ] [DomicilioDAOH2:23] Inicio de una operación de guardar de domicilio
+[2022-11-17 13:47:40] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Juan
+[2022-11-17 13:47:46] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Juan
+[2022-11-17 13:47:55] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Luis
+[2022-11-17 13:48:08] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Meter
+[2022-11-17 13:48:09] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Meter
+[2022-11-17 13:52:36] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Meter
+[2022-11-17 13:53:05] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-17 13:53:15] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-17 13:54:05] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-17 13:54:07] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-17 13:54:20] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-17 13:55:17] [ INFO ] [OdontologoDAOH2:137] Iniciando el proceso de busqueda de todos los odontologos
+[2022-11-17 14:02:00] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Maria
+[2022-11-17 14:02:05] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Luciana
+[2022-11-17 14:02:11] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Marta
+[2022-11-17 14:02:18] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Teduele
+[2022-11-17 14:02:46] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Pedro
