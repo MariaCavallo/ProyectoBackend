@@ -3,71 +3,48 @@ package com.dh.ProyectoFinal.Controller;
 import com.dh.ProyectoFinal.Entity.Paciente;
 import com.dh.ProyectoFinal.Service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pacientes")
 public class PacienteController {
-    private PacienteService pacienteService;
+
     @Autowired
-    public PacienteController(PacienteService pacienteService) {
-        this.pacienteService = pacienteService;
-    }
-    /*
-    @GetMapping
-    public String traerPacienteXEmail(Model model, @RequestParam("email") String email){
-        Paciente pacienteBuscado=pacienteService.buscarPacienteByEmail(email);
-        model.addAttribute("nombre",pacienteBuscado.getNombre());
-        model.addAttribute("apellido",pacienteBuscado.getApellido());
-        return "index";
-    }
-     */
+    private PacienteService pacienteService;
+
+
     @PostMapping
-    public Paciente registrarNuevoPaciente(@RequestBody Paciente paciente){
-        return pacienteService.guardarPaciente(paciente);
+    public ResponseEntity<Paciente> guardar (@RequestBody Paciente paciente) {
+        return ResponseEntity.ok(pacienteService.guardarPaciente(paciente));
     }
+
+    @GetMapping("/buscar")
+    public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("id") Integer id) {
+        return ResponseEntity.ok(pacienteService.buscarPaciente(id));
+    }
+    @GetMapping("/buscar/mail")
+    public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("email") String string) {
+        return ResponseEntity.ok(pacienteService.buscarXEmail(string));
+    }
+
     @PutMapping
-    public String actualizarPaciente(@RequestBody Paciente paciente){
-        Paciente pacienteBuscado=pacienteService.buscarPaciente(paciente.getId());
-        if (pacienteBuscado!=null){
-            pacienteService.actualizarPaciente(paciente);
-            return "Se actulizó el paciente con apellido "+paciente.getApellido();
-        }
-        else{
-            return "El paciente con id= "+paciente.getId()+" no existe en la BD." +
-                    "No puede actualizar algo que no existe :(";
-        }
-
+    public ResponseEntity<String> actualizar (@RequestBody Paciente paciente) {
+        pacienteService.actualizarPaciente(paciente);
+        return ResponseEntity.ok().body("Se actualizo el paciente de apellido: " + paciente.getApellido());
     }
 
-    @DeleteMapping("eliminar/{id}")
-    public String eliminarPaciente(@PathVariable("id") Integer id){
-        Paciente pacienteBuscado = pacienteService.buscarPaciente(id);
-        if(pacienteBuscado != null) {
-            pacienteService.eliminarPaciente(id);
-            return "Se ha eliminado el paciente con el id: " + id;
-        }else{
-            return "El paciente con id: " + id + " no existe en la base de datos.";
-        }
+    @DeleteMapping("/borrar")
+    public ResponseEntity<String> eliminar (@RequestParam("id") Integer id) {
+        pacienteService.eliminarPaciente(id);
+        return ResponseEntity.ok().body("Se elimino el paciente de id: " + id);
     }
 
-    @GetMapping("buscar/{id}")
-    public Paciente buscarPaciente(@PathVariable("id") Integer id){
-        return pacienteService.buscarPaciente(id);
+    @GetMapping
+    public ResponseEntity<List<Paciente>> buscarTodos () {
+        return ResponseEntity.ok(pacienteService.buscarTodosPacientes());
     }
-
-    @GetMapping()
-    public List<Paciente> listarPacientes(){
-        List<Paciente> pacienteList = new ArrayList<>();
-        pacienteList = pacienteService.buscarTodosPacientes();
-        if(pacienteList != null){
-            return pacienteList;
-        }
-        return pacienteList;
-
-    }
-
 }

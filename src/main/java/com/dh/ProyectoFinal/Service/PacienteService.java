@@ -1,34 +1,36 @@
 package com.dh.ProyectoFinal.Service;
 
-import com.dh.ProyectoFinal.Repository.daos.PacienteDAOH2;
+import com.dh.ProyectoFinal.Repository.PacienteRepository;
 import com.dh.ProyectoFinal.Entity.Paciente;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class PacienteService {
-    private IDao<Paciente> pacienteIDao ;
+    private PacienteRepository pacienteRepository ;
 
-    public PacienteService() {
-        this.pacienteIDao = new PacienteDAOH2();
+    public PacienteService(PacienteRepository pacienteRepository) {
+        this.pacienteRepository = pacienteRepository;
     }
     public Paciente guardarPaciente (Paciente paciente){
-        return pacienteIDao.guardar(paciente);
+        return pacienteRepository.save(paciente);
     }
     public void eliminarPaciente(Integer id){
-        pacienteIDao.eliminar(id);
+        pacienteRepository.deleteById(id);
     }
     public void actualizarPaciente(Paciente paciente){
-        pacienteIDao.actualizar(paciente);
+        pacienteRepository.save(paciente);
     }
-    public Paciente buscarPaciente(Integer id){
-        return pacienteIDao.buscar(id);
+    public Optional<Paciente> buscarPaciente(Integer id){
+        return pacienteRepository.findById(id);
     }
     public List<Paciente> buscarTodosPacientes(){
-        return pacienteIDao.buscarTodo();
+        return pacienteRepository.findAll();
     }
 
-    public Paciente buscarPacienteByEmail(String email){
-        return pacienteIDao.buscarXString(email);
+    public Optional<Paciente> buscarXEmail(String email){
+        return pacienteRepository.findByEmail(email);
     }
 }
