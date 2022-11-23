@@ -10,26 +10,20 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+    @Column
     private String nombre;
+    @Column
     private String apellido;
+    @Column
     private String dni;
+    @Column
     private LocalDate fechaIngreso;
+    @OneToOne(fetch = FetchType.LAZY)
+    @Column
     private Domicilio domicilio;
-
+    @Column
     private String email;
-    public Paciente(){
-
-    }
-    public Paciente(Integer id, String nombre, String apellido, String dni, LocalDate fechaIngreso, Domicilio domicilio, String email) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.fechaIngreso = fechaIngreso;
-        this.domicilio = domicilio;
-        this.email = email;
-    }
 
     public String getEmail() {
         return email;
@@ -39,11 +33,11 @@ public class Paciente {
         this.email = email;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -84,25 +78,6 @@ public class Paciente {
     }
 
     public void setDomicilio(Domicilio domicilio) {
-        this.domicilio = domicilio;
-    }
-
-    public Paciente(String nombre, String apellido, String dni, LocalDate fechaIngreso, Domicilio domicilio) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.fechaIngreso = fechaIngreso;
-        this.domicilio = domicilio;
-    }
-
-
-
-    public Paciente(Integer id, String nombre, String apellido, String dni, LocalDate fechaIngreso, Domicilio domicilio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.fechaIngreso = fechaIngreso;
         this.domicilio = domicilio;
     }
 }

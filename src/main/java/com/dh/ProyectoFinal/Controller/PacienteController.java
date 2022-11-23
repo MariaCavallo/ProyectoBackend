@@ -23,7 +23,7 @@ public class PacienteController {
     }
 
     @GetMapping("/buscar")
-    public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("id") Integer id) {
+    public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("id") Long id) {
         return ResponseEntity.ok(pacienteService.buscarPaciente(id));
     }
     @GetMapping("/buscar/mail")
@@ -38,7 +38,7 @@ public class PacienteController {
     }
 
     @DeleteMapping("/borrar")
-    public ResponseEntity<String> eliminar (@RequestParam("id") Integer id) {
+    public ResponseEntity<String> eliminar (@RequestParam("id") Long id) {
         pacienteService.eliminarPaciente(id);
         return ResponseEntity.ok().body("Se elimino el paciente de id: " + id);
     }

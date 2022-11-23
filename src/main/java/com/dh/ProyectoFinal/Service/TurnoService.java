@@ -17,13 +17,13 @@ public class TurnoService {
     public Turno guardarTurno (Turno turno){
         return turnoRepository.save(turno);
     }
-    public void eliminarTurno(Integer id){
+    public void eliminarTurno(Long id){
         turnoRepository.deleteById(id);
     }
     public void actualizarTurno(Turno turno){
         turnoRepository.save(turno);
     }
-    public Optional<Turno> buscarTurno(Integer id){
+    public Optional<Turno> buscarTurno(Long id){
         return turnoRepository.findById(id);
     }
     public List<Turno> buscarTodosTurno(){

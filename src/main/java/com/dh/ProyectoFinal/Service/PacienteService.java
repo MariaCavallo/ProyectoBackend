@@ -17,13 +17,13 @@ public class PacienteService {
     public Paciente guardarPaciente (Paciente paciente){
         return pacienteRepository.save(paciente);
     }
-    public void eliminarPaciente(Integer id){
+    public void eliminarPaciente(Long id){
         pacienteRepository.deleteById(id);
     }
     public void actualizarPaciente(Paciente paciente){
         pacienteRepository.save(paciente);
     }
-    public Optional<Paciente> buscarPaciente(Integer id){
+    public Optional<Paciente> buscarPaciente(Long id){
         return pacienteRepository.findById(id);
     }
     public List<Paciente> buscarTodosPacientes(){

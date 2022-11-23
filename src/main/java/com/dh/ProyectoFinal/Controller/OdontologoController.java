@@ -24,7 +24,7 @@ public class OdontologoController {
     }
 
     @GetMapping("/buscar")
-    public ResponseEntity<Optional<Odontologo>> buscar (@RequestParam("id") Integer id) {
+    public ResponseEntity<Optional<Odontologo>> buscar (@RequestParam("id") Long id) {
         return ResponseEntity.ok(odontologoService.buscarOdontologoXId(id));
     }
 
@@ -35,7 +35,7 @@ public class OdontologoController {
     }
 
     @DeleteMapping("/borrar")
-    public ResponseEntity<String> eliminar (@RequestParam("id") Integer id) {
+    public ResponseEntity<String> eliminar (@RequestParam("id") Long id) {
         odontologoService.eliminarOdontologo(id);
         return ResponseEntity.ok().body("Se elimino el odontologo de id: " + id);
     }

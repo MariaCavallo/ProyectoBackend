@@ -25,10 +25,10 @@ public class OdontologoService {
     public void actualizarOdontologo(Odontologo odontologo){
         odontologoRepository.save(odontologo);
     }
-    public void eliminarOdontologo(Integer id){
+    public void eliminarOdontologo(Long id){
         odontologoRepository.deleteById(id);
     }
-    public Optional<Odontologo> buscarOdontologoXId(Integer id){
+    public Optional<Odontologo> buscarOdontologoXId(Long id){
         return odontologoRepository.findById(id);
     }
 }
