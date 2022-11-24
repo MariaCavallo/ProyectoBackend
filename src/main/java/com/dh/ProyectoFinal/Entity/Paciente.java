@@ -19,11 +19,12 @@ public class Paciente {
     private String dni;
     @Column
     private LocalDate fechaIngreso;
-    @OneToOne(fetch = FetchType.LAZY)
-    @Column
-    private Domicilio domicilio;
     @Column
     private String email;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
+    private Domicilio domicilio;
+
 
     public String getEmail() {
         return email;

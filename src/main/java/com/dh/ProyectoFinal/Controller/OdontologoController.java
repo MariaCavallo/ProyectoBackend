@@ -14,9 +14,12 @@ import java.util.Optional;
 @RequestMapping("/odontologos")
 public class OdontologoController {
 
-    @Autowired
     private OdontologoService odontologoService;
 
+    @Autowired
+    public OdontologoController(OdontologoService odontologoService) {
+        this.odontologoService = odontologoService;
+    }
 
     @PostMapping
     public ResponseEntity<Odontologo> guardar (@RequestBody Odontologo odontologo) {

@@ -2,6 +2,7 @@ package com.dh.ProyectoFinal.Service;
 
 import com.dh.ProyectoFinal.Repository.PacienteRepository;
 import com.dh.ProyectoFinal.Entity.Paciente;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,8 +10,9 @@ import java.util.Optional;
 
 @Service
 public class PacienteService {
-    private PacienteRepository pacienteRepository ;
+    private PacienteRepository pacienteRepository;
 
+    @Autowired
     public PacienteService(PacienteRepository pacienteRepository) {
         this.pacienteRepository = pacienteRepository;
     }
@@ -30,7 +32,7 @@ public class PacienteService {
         return pacienteRepository.findAll();
     }
 
-    public Optional<Paciente> buscarXEmail(String email){
+    public Optional<Paciente> buscarByEmail(String email){
         return pacienteRepository.findByEmail(email);
     }
 }

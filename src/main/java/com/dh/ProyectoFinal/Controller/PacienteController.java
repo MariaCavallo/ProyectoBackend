@@ -13,28 +13,42 @@ import java.util.Optional;
 @RequestMapping("/pacientes")
 public class PacienteController {
 
-    @Autowired
+
     private PacienteService pacienteService;
 
+    @Autowired
+    public PacienteController(PacienteService pacienteService) {
+        this.pacienteService = pacienteService;
+    }
 
     @PostMapping
     public ResponseEntity<Paciente> guardar (@RequestBody Paciente paciente) {
         return ResponseEntity.ok(pacienteService.guardarPaciente(paciente));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("id") Long id) {
-        return ResponseEntity.ok(pacienteService.buscarPaciente(id));
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<Paciente> buscar (@PathVariable("id") Long id) {
+        Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(id);
+        if (pacienteBuscado.isPresent()) {
+            return ResponseEntity.ok(pacienteBuscado.get());
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
     @GetMapping("/buscar/mail")
     public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("email") String string) {
-        return ResponseEntity.ok(pacienteService.buscarXEmail(string));
+        return ResponseEntity.ok(pacienteService.buscarByEmail(string));
     }
 
-    @PutMapping
+    @PutMapping("/actualizar")
     public ResponseEntity<String> actualizar (@RequestBody Paciente paciente) {
-        pacienteService.actualizarPaciente(paciente);
-        return ResponseEntity.ok().body("Se actualizo el paciente de apellido: " + paciente.getApellido());
+        Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(paciente.getId());
+        if (pacienteBuscado.isPresent()) {
+            pacienteService.actualizarPaciente(paciente);
+            return ResponseEntity.ok().body("Se actualizo el paciente de apellido: " + paciente.getApellido());
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @DeleteMapping("/borrar")
