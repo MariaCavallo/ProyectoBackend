@@ -51,10 +51,15 @@ public class PacienteController {
         }
     }
 
-    @DeleteMapping("/borrar")
-    public ResponseEntity<String> eliminar (@RequestParam("id") Long id) {
-        pacienteService.eliminarPaciente(id);
-        return ResponseEntity.ok().body("Se elimino el paciente de id: " + id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar (@PathVariable Long id) {
+        Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(id);
+        if (pacienteBuscado.isPresent()) {
+            pacienteService.eliminarPaciente(id);
+            return ResponseEntity.ok().body("Se elimino el paciente de id: " + id);
+        } else {
+            return ResponseEntity.badRequest().body("No se pudo eliminar el paciente con id: " + id);
+        }
     }
 
     @GetMapping

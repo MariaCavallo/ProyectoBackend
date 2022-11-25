@@ -13,7 +13,8 @@ public class Turno {
     private Long id;
     @Column
     private Paciente paciente;
-    @Column
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "odontologo_id", referencedColumnName = "id")
     private Odontologo odontologo;
     @Column
     private LocalDate fecha;
