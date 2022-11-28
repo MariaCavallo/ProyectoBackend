@@ -47,7 +47,9 @@ public class PacienteController {
             pacienteService.actualizarPaciente(paciente);
             return ResponseEntity.ok().body("Se actualizo el paciente de apellido: " + paciente.getApellido());
         } else {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body("El paciente con id= "+
+                    paciente.getId() + " no existe en la Base de Datos." +
+                            "No puede actualizar algo que no existe :(");
         }
     }
 

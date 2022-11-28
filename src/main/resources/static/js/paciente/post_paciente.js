@@ -59,20 +59,6 @@ window.addEventListener('load', function () {
                       document.querySelector('#response').innerHTML = errorAlert;
                       document.querySelector('#response').style.display = "block";
                      //se dejan todos los campos vacíos por si se quiere ingresar otra pelicula
-                     resetUploadForm();})
+                    ;})
     });
-
-
-    function resetUploadForm(){
-        formData;
-    }
-
-    (function(){
-        let pathname = window.location.pathname;
-        if(pathname === "/"){
-            document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/pacienteList.html") {
-            document.querySelector(".nav .nav-item a:last").addClass("active");
-        }
-    })();
 });

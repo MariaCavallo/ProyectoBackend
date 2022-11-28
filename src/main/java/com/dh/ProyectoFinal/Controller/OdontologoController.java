@@ -26,21 +26,38 @@ public class OdontologoController {
         return ResponseEntity.ok(odontologoService.guardarOdontologo(odontologo));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity<Optional<Odontologo>> buscar (@RequestParam("id") Long id) {
-        return ResponseEntity.ok(odontologoService.buscarOdontologoXId(id));
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<Odontologo> buscar (@PathVariable Long id) {
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
+        if (odontologoBuscado.isPresent()){
+            return ResponseEntity.ok(odontologoBuscado.get());
+        } else {
+            return  ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping
     public ResponseEntity<String> actualizar (@RequestBody Odontologo odontologo) {
-        odontologoService.actualizarOdontologo(odontologo);
-        return ResponseEntity.ok().body("Se actualizo el paciente de apellido: " + odontologo.getApellido());
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(odontologo.getId());
+        if (odontologoBuscado.isPresent()) {
+            odontologoService.actualizarOdontologo(odontologo);
+            return ResponseEntity.ok().body("Se actualizo el odontologo con apellido: " + odontologo.getApellido());
+        } else {
+            return ResponseEntity.badRequest().body("El odontologo con id= " + odontologo.getId() +
+                    " no existe en la Base de Datos, No se puede actualizar algo que no existe!");
+        }
     }
 
-    @DeleteMapping("/borrar")
-    public ResponseEntity<String> eliminar (@RequestParam("id") Long id) {
-        odontologoService.eliminarOdontologo(id);
-        return ResponseEntity.ok().body("Se elimino el odontologo de id: " + id);
+    @DeleteMapping("/borrar/{id}")
+    public ResponseEntity<String> eliminar (@PathVariable Long id) {
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
+        if (odontologoBuscado.isPresent()) {
+            odontologoService.eliminarOdontologo(id);
+            return ResponseEntity.ok().body("Se elimino el odontologo de id: " + id);
+        } else {
+            return ResponseEntity.badRequest().body("No se encuentra un odontologo con id= "
+                    + id + " . Verificar el ingreso.");
+        }
     }
 
     @GetMapping

@@ -17,8 +17,8 @@ window.addEventListener('load', function () {
             //cada fila tendrá un id que luego nos permitirá borrar la fila si eliminamos la pelicula
             var table = document.getElementById("pacienteTable");
             var odontologoRow = table.insertRow();
-            let tr_id = 'tr_' + odontologo.id;
-            odontologoRow.id = tr_id;
+            let tr_id = 'tr_' + paciente.id;
+            pacienteRow.id = tr_id;
 
             //por cada pelicula creamos un boton delete que agregaremos en cada fila para poder eliminar la misma
             //dicho boton invocara a la funcion de java script deleteByKey que se encargará
@@ -42,13 +42,13 @@ window.addEventListener('load', function () {
             //como primer columna pondremos el boton modificar
             //luego los datos de la pelicula
             //como ultima columna el boton eliminar
-            peliculaRow.innerHTML =
-                    '<td class=\"td_id\">' + pacienteList.id + '</td>' +
-                    '<td class=\"td_nombre\">' + pacienteList.nombre.toUpperCase() + '</td>' +
-                    '<td class=\"td_apellido\">' + pacienteList.apellido.toUpperCase() + '</td>' +
-                    '<td class=\"td_dni\">' + pacienteList.dni.toUpperCase() + '</td>' +
-                    '<td class=\"td_fechaIngreso\">' + pacienteList.fechaIngreso + '</td>' +
-                    '<td class=\"td_email\">' + pacienteList.email + '</td>' +
+            pacienteRow.innerHTML =
+                    '<td class=\"td_id\">' + paciente.id + '</td>' +
+                    '<td class=\"td_nombre\">' + paciente.nombre.toUpperCase() + '</td>' +
+                    '<td class=\"td_apellido\">' + paciente.apellido.toUpperCase() + '</td>' +
+                    '<td class=\"td_dni\">' + paciente.dni.toUpperCase() + '</td>' +
+                    '<td class=\"td_fechaIngreso\">' + paciente.fechaIngreso + '</td>' +
+                    '<td class=\"td_email\">' + paciente.email + '</td>' +
                     '<td>' + deleteButton + '</td>'+
                     '<td>' + updateButton + '</td>';
 

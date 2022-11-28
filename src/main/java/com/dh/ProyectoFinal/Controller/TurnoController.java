@@ -13,8 +13,13 @@ import java.util.Optional;
 @RequestMapping("/turnos")
 public class TurnoController {
 
-    @Autowired
+
     private TurnoService turnoService;
+
+    @Autowired
+    public TurnoController (TurnoService turnoService){
+        this.turnoService = turnoService;
+    }
 
 
     @PostMapping
@@ -22,21 +27,38 @@ public class TurnoController {
         return ResponseEntity.ok(turnoService.guardarTurno(turno));
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity<Optional<Turno>> buscar (@RequestParam("id") Long id) {
-        return ResponseEntity.ok(turnoService.buscarTurno(id));
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<Turno> buscar (@PathVariable Long id) {
+        Optional<Turno> turnoBuscado = turnoService.buscarTurno(id);
+        if (turnoBuscado.isPresent()){
+            return ResponseEntity.ok(turnoBuscado.get());
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping
     public ResponseEntity<String> actualizar (@RequestBody Turno turno) {
-        turnoService.actualizarTurno(turno);
-        return ResponseEntity.ok().body("Se actualizo el turno de id: " + turno.getId());
+        Optional<Turno> turnoBuscado = turnoService.buscarTurno(turno.getId());
+        if (turnoBuscado.isPresent()){
+            turnoService.actualizarTurno(turno);
+            return ResponseEntity.ok().body("Se actualizo el turno de id: " + turno.getId());
+        } else {
+            return ResponseEntity.badRequest().body("El turno con id= " + turno.getId() +
+                    "no existe en la Base de Datos. No se puede actualizar algo que no existe!");
+        }
     }
 
-    @DeleteMapping("/borrar")
-    public ResponseEntity<String> eliminar (@RequestParam("id") Long id) {
-        turnoService.eliminarTurno(id);
-        return ResponseEntity.ok().body("Se elimino el turno de id: " + id);
+    @DeleteMapping("/borrar/{id}")
+    public ResponseEntity<String> eliminar (@PathVariable Long id) {
+        Optional<Turno> turnoBuscado = turnoService.buscarTurno(id);
+        if (turnoBuscado.isPresent()){
+            turnoService.eliminarTurno(id);
+            return ResponseEntity.ok().body("Se elimino el turno de id: " + id);
+        } else {
+            return ResponseEntity.badRequest().body("No se ha encontrado un paciente con id= "
+                    + id + ". Verifique el ingreso.");
+        }
     }
 
     @GetMapping

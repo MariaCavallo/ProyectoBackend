@@ -17,6 +17,7 @@ window.addEventListener('load', function () {
             apellido: document.querySelector('#apellido').value,
             dni: document.querySelector('#dni').value,
             fecha ingreso: document.querySelector('#fechaIngreso').value,
+            email: document.querySelector('#email').value,
             domicilio{
                 id: document.querySelector('#domicilio_id').value,
                 calle: document.querySelector('#calle').value,
@@ -59,6 +60,8 @@ window.addEventListener('load', function () {
                          document.querySelector('#apellido').value = paciente.apellido,
                          document.querySelector('#dni').value = paciente.dni,
                          document.querySelector('#fechaIngreso').value = paciente.fechaIngreso,
+                         document.querySelector('#email').value = paciente.email,
+                         document.querySelector('#documento_id').value = paciente.domicilio.id,
                          document.querySelector('#calle').value = paciente.domicilio.calle,
                          document.querySelector('#numero').value = paciente.domicilio.numero,
                          document.querySelector('#localidad').value = paciente.domicilio.localidad,
