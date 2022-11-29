@@ -26,6 +26,28 @@ public class Paciente {
     private Domicilio domicilio;
 
 
+    public Paciente() {
+    }
+
+    public Paciente(String nombre, String apellido, String dni, LocalDate fechaIngreso, String email, Domicilio domicilio) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.fechaIngreso = fechaIngreso;
+        this.email = email;
+        this.domicilio = domicilio;
+    }
+
+    public Paciente(Long id, String nombre, String apellido, String dni, LocalDate fechaIngreso, String email, Domicilio domicilio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.fechaIngreso = fechaIngreso;
+        this.email = email;
+        this.domicilio = domicilio;
+    }
+
     public String getEmail() {
         return email;
     }
