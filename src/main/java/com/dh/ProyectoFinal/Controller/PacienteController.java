@@ -22,12 +22,12 @@ public class PacienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Paciente> guardar (@RequestBody Paciente paciente) {
+    public ResponseEntity<Paciente> guardarPaciente (@RequestBody Paciente paciente) {
         return ResponseEntity.ok(pacienteService.guardarPaciente(paciente));
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Paciente> buscar (@PathVariable("id") Long id) {
+    public ResponseEntity<Paciente> buscarPacienteXid (@PathVariable("id") Long id) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(id);
         if (pacienteBuscado.isPresent()) {
             return ResponseEntity.ok(pacienteBuscado.get());
@@ -36,12 +36,12 @@ public class PacienteController {
         }
     }
     @GetMapping("/buscar/mail")
-    public ResponseEntity<Optional<Paciente>> buscar (@RequestParam("email") String string) {
+    public ResponseEntity<Optional<Paciente>> buscarPacienteXemail (@RequestParam("email") String string) {
         return ResponseEntity.ok(pacienteService.buscarByEmail(string));
     }
 
     @PutMapping("/actualizar")
-    public ResponseEntity<String> actualizar (@RequestBody Paciente paciente) {
+    public ResponseEntity<String> actualizarPaciente (@RequestBody Paciente paciente) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(paciente.getId());
         if (pacienteBuscado.isPresent()) {
             pacienteService.actualizarPaciente(paciente);
@@ -53,8 +53,8 @@ public class PacienteController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar (@PathVariable Long id) {
+    @DeleteMapping("/borrar/{id}")
+    public ResponseEntity<String> eliminarPaciente (@PathVariable Long id) {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(id);
         if (pacienteBuscado.isPresent()) {
             pacienteService.eliminarPaciente(id);
@@ -65,7 +65,7 @@ public class PacienteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Paciente>> buscarTodos () {
+    public ResponseEntity<List<Paciente>> buscarTodosPacientes () {
         return ResponseEntity.ok(pacienteService.buscarTodosPacientes());
     }
 }

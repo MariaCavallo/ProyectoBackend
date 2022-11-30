@@ -82,7 +82,7 @@ public class TurnoController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<String> eliminar (@PathVariable Long id) {
+    public ResponseEntity<String> eliminarTurno (@PathVariable Long id) {
         if (turnoService.buscarTurno(id).isPresent()){
             turnoService.eliminarTurno(id);
             return ResponseEntity.ok().body("Se elimino el turno con id= " + id);
@@ -93,7 +93,7 @@ public class TurnoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TurnoDTO>> buscarTodos () {
+    public ResponseEntity<List<TurnoDTO>> buscarTodosTurnos () {
         return ResponseEntity.ok(turnoService.buscarTodosTurno());
     }
 }

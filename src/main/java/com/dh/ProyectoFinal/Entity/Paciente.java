@@ -1,7 +1,7 @@
 package com.dh.ProyectoFinal.Entity;
 
 import javax.persistence.*;
-
+import com.dh.ProyectoFinal.Entity.Domicilio;
 import java.time.LocalDate;
 
 @Entity
