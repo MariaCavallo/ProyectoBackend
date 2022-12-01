@@ -1,9 +1,38 @@
-body{
-    background-color: "#19293E",
-    color: "#dcff5c"
+:root {
+  --negro: #000000ff;
+  --oscuro: #17173b;
+  --form: #4bb5c4;
+  --app-grey: #F2F2F2;
+  --azul: #3333ffff;
+  --azul-hover: rgb(40, 40, 197);
+
 }
 
-nav{
-    background-color: "#1d758b"
-    color: "#f6ff75"
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--oscuro);
+  min-height: 100vh;
+  color: white;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form {
+    background-color: var(--form);
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
 }

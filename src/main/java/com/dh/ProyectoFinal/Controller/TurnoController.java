@@ -2,6 +2,7 @@ package com.dh.ProyectoFinal.Controller;
 
 import com.dh.ProyectoFinal.DTO.TurnoDTO;
 import com.dh.ProyectoFinal.Entity.Turno;
+import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import com.dh.ProyectoFinal.Repository.OdontologoRepository;
 import com.dh.ProyectoFinal.Repository.PacienteRepository;
 import com.dh.ProyectoFinal.Service.OdontologoService;
@@ -82,13 +83,13 @@ public class TurnoController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<String> eliminarTurno (@PathVariable Long id) {
+    public ResponseEntity<String> eliminarTurno (@PathVariable Long id) throws ResourceNotFoundException{
         if (turnoService.buscarTurno(id).isPresent()){
             turnoService.eliminarTurno(id);
             return ResponseEntity.ok().body("Se elimino el turno con id= " + id);
         } else {
-            return ResponseEntity.badRequest().body("No se ha encontrado un paciente con id= "
-                    + id + ". Ya que el mismo no existe en la base de datos.");
+            throw new ResourceNotFoundException("No se ha encontrado un turno con id= " +
+                    id + ". Ya que el mismo no existe en la base de datos.");
         }
     }
 

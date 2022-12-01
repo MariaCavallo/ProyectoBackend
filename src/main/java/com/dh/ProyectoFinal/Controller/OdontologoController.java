@@ -1,6 +1,7 @@
 package com.dh.ProyectoFinal.Controller;
 
 import com.dh.ProyectoFinal.Entity.Odontologo;
+import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import com.dh.ProyectoFinal.Service.OdontologoService;
 import com.dh.ProyectoFinal.Service.PacienteService;
 import com.dh.ProyectoFinal.Service.TurnoService;
@@ -55,14 +56,14 @@ public class OdontologoController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<String> eliminarOdontologo (@PathVariable Long id) {
+    public ResponseEntity<String> eliminarOdontologo (@PathVariable Long id) throws ResourceNotFoundException{
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
         if (odontologoBuscado.isPresent()) {
             odontologoService.eliminarOdontologo(id);
             return ResponseEntity.ok().body("Se elimino el odontologo de id: " + id);
         } else {
-            return ResponseEntity.badRequest().body("No se encuentra un odontologo con id= "
-                    + id + " . Verificar el ingreso.");
+            throw new ResourceNotFoundException("No se encuentra un odontologo con id= " +
+                    id + " . Verificar el ingreso.");
         }
     }
 

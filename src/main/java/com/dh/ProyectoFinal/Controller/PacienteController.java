@@ -1,6 +1,7 @@
 package com.dh.ProyectoFinal.Controller;
 
 import com.dh.ProyectoFinal.Entity.Paciente;
+import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import com.dh.ProyectoFinal.Service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -54,13 +55,14 @@ public class PacienteController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<String> eliminarPaciente (@PathVariable Long id) {
+    public ResponseEntity<String> eliminarPaciente (@PathVariable Long id) throws ResourceNotFoundException{
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(id);
         if (pacienteBuscado.isPresent()) {
             pacienteService.eliminarPaciente(id);
             return ResponseEntity.ok().body("Se elimino el paciente de id: " + id);
         } else {
-            return ResponseEntity.badRequest().body("No se pudo eliminar el paciente con id: " + id);
+            throw new ResourceNotFoundException("No se pudo eliminar el paciente con id " +
+                    id + ". Verificar si existe");
         }
     }
 
