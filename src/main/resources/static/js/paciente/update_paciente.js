@@ -1,92 +1,72 @@
-$(document).ready(function(){
-    $("#update_paciente_form").submit(function(evt) {
-        evt.preventDefault();
-        try {
-            let pacienteId = $("#paciente_id").val();
-
-        let formData = {
-            id: $("#paciente_id").val(),
-            nombre: $("#nombre").val(),
-            apellido:  $("#apellido").val(),
-            fechaIngreso: $("#fechaIngreso").val(),
-            dni: $("#dni").val(),
-             domicilio: {
-                  id: $("#paciente_id").val(),
-                  calle: $("#calle").val(),
-                  numero: $("#numero").val(),
-                  localidad: $("#localidad").val(),
-                  provincia: $("#provincia").val(),
-              }
-        }
-
-            $.ajax({
-                url: '/pacientes',
-                type: 'PUT',
-                contentType : "application/json",
-                data: JSON.stringify(formData),
-                dataType : 'json',
-                async: false,
-                cache: false,
-                success: function (response) {
-                    let paciente = response;
-
-                    let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            '<strong> Paciente actualizado, recargar página </strong></div>'
+window.addEventListener('load', function () {
 
 
-                    $("#tr_" + pacienteId + " td.td_first_name").text(paciente.nombre);
-                    $("#tr_" + pacienteId + " td.td_last_name").text(paciente.apellido);
-                    $("#tr_" + pacienteId + " td.td_matricula").text(paciente.matricula);
-                    $("#tr_" + pacienteId + " td.td_domicilio").text(paciente.domicilio.calle + paciente.domicilio.numero);
+    //Buscamos y obtenemos el formulario donde estan
+    //los datos que el usuario pudo haber modificado de la pelicula
+    const formulario = document.querySelector('#update_paciente_form');
 
-                    $("#response").empty();
-                    $("#response").append(successAlert);
-                    $("#response").css({"display": "block"});
-                },
+    formulario.addEventListener('submit', function (event) {
+        let pacienteId = document.querySelector('#paciente_id').value;
 
-                error: function (response) {
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                        '<strong> Error </strong></div>';
+        //creamos un JSON que tendrá los datos de la película
+        //a diferencia de una pelicula nueva en este caso enviamos el id
+        //para poder identificarla y modificarla para no cargarla como nueva
+        const formData = {
+            id: document.querySelector('#paciente_id').value,
+            nombre: document.querySelector('#nombre').value,
+            apellido: document.querySelector('#apellido').value,
+            dni: document.querySelector('#dni').value,
+            fechaIngreso: document.querySelector('#fechaIngreso').value,
+            email: document.querySelector('#email').value,
+            domicilio:{
+                            id: document.querySelector('#domicilio_id').value,
+                            calle: document.querySelector('#calle').value,
+                            numero: document.querySelector('#numero').value,
+                            localidad: document.querySelector('#localidad').value,
+                            provincia: document.querySelector('#provincia').value,
+                            }
 
-                    $("#response").empty();
-                    $("#response").append(errorAlert);
-                    $("#response").css({"display": "block"});
+        };
 
-                }
-            });
-        } catch(error){
-            console.log(error);
-            alert(error);
-        }
-    });
-
-    $(document).on("click", "table button.btn_id", function(){
-        let id_of_button = (event.srcElement.id);
-        let pacienteId = id_of_button.split("_")[2];
-
-        $.ajax({
-            url: '/pacientes/' + pacienteId,
-            type: 'GET',
-            success: function(response) {
-                let paciente = response;
-                $("#paciente_id").val(paciente.id);
-                $("#nombre").val(paciente.nombre);
-                $("#apellido").val(paciente.apellido);
-                $("#fechaIngreso").val(paciente.fechaIngreso),
-                $("#dni").val(paciente.dni),
-                $("#calle").val(paciente.domicilio.calle),
-                $("#numero").val(paciente.domicilio.numero),
-                $("#localidad").val(paciente.domicilio.localidad),
-                $("#provincia").val(paciente.domicilio.provincia),
-
-                $("#div_paciente_updating").css({"display": "block"});
+        //invocamos utilizando la función fetch la API peliculas con el método PUT que modificará
+        //la película que enviaremos en formato JSON
+        const url = '/pacientes';
+        const settings = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            error: function(error){
-                console.log(error);
-                alert("Error -> " + error);
-            }
-        });
-    });
-});
+            body: JSON.stringify(formData)
+        }
+          fetch(url,settings)
+          .then(response => response.json())
+
+    })
+ })
+
+function findBy(id) {
+          const url = '/pacientes'+"/"+id;
+          const settings = {
+              method: 'GET'
+          }
+          fetch(url,settings)
+          .then(response => response.json())
+          .then(data => {
+              let paciente = data;
+              document.querySelector('#paciente_id').value = paciente.id;
+              document.querySelector('#nombre').value=paciente.nombre;
+              document.querySelector('#apellido').value=paciente.apellido;
+              document.querySelector('#dni').value=paciente.dni;
+              document.querySelector('#fechaIngreso').value=paciente.fechaIngreso;
+              document.querySelector('#email').value=paciente.email;
+              document.querySelector('#domicilio_id').value=paciente.domicilio.id;
+              document.querySelector('#calle').value=paciente.domicilio.calle;
+              document.querySelector('#numero').value=paciente.domicilio.numero;
+              document.querySelector('#localidad').value=paciente.domicilio.localidad;
+              document.querySelector('#provincia').value=paciente.domicilio.provincia;
+              //el formulario por default esta oculto y al editar se habilita
+              document.querySelector('#div_paciente_updating').style.display = "block";
+          }).catch(error => {
+              alert("Error: " + error);
+          })
+      }

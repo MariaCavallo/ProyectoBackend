@@ -1,77 +1,56 @@
-$(document).ready(function(){
-    $("#update_odontologo_form").submit(function(evt) {
-        evt.preventDefault();
-        try {
-            let odontologoId = $("#odontologo_id").val();
-            
-        let formData = {
-            id: $("#odontologo_id").val(),
-            nombre : $("#nombre").val(),
-            apellido :  $("#apellido").val(),
-            matricula: $("#matricula").val(),
-        }
-            
-            $.ajax({
-                url: '/odontologos',
-                type: 'PUT',
-                contentType : "application/json",
-                data: JSON.stringify(formData),
-                dataType : 'json',
-                async: false,
-                cache: false,
-                success: function (response) {
-                    let odontologo = response;
-        
-                    let successAlert = '<div class="alert alert-success alert-dismissible">' + 
-                                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            '<strong> Odontologo actualizado </strong></div>'
+window.addEventListener('load', function () {
 
-                 
-                    $("#tr_" + odontologoId + " td.td_first_name").text(odontologo.nombre);
-                    $("#tr_" + odontologoId + " td.td_last_name").text(odontologo.apellido);
-                    $("#tr_" + odontologoId + " td.td_matricula").text(odontologo.matricula);
 
-                    $("#response").empty();
-                    $("#response").append(successAlert);
-                    $("#response").css({"display": "block"});
-                },
+    //Buscamos y obtenemos el formulario donde estan
+    //los datos que el usuario pudo haber modificado de la pelicula
+    const formulario = document.querySelector('#update_odontologo_form');
 
-                error: function (response) {
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                        '<strong> Error </strong></div>';
+    formulario.addEventListener('submit', function (event) {
+        let odontologoId = document.querySelector('#odontologo_id').value;
 
-                    $("#response").empty();                                    
-                    $("#response").append(errorAlert);
-                    $("#response").css({"display": "block"});
-                    location.reload();
-                }
-            });
-        } catch(error){
-            console.log(error);
-            alert(error);
-        }
-    });
+        //creamos un JSON que tendrá los datos de la película
+        //a diferencia de una pelicula nueva en este caso enviamos el id
+        //para poder identificarla y modificarla para no cargarla como nueva
+        const formData = {
+            id: document.querySelector('#odontologo_id').value,
+            matricula: document.querySelector('#matricula').value,
+            nombre: document.querySelector('#nombre').value,
+            apellido: document.querySelector('#apellido').value,
+        };
 
-    $(document).on("click", "table button.btn_id", function(){
-        let id_of_button = (event.srcElement.id);
-        let odontologoId = id_of_button.split("_")[2];
-  
-        $.ajax({
-            url: '/odontologos/' + odontologoId,
-            type: 'GET',
-            success: function(response) {
-                let odontologo = response;                
-                $("#odontologo_id").val(odontologo.id);
-                $("#nombre").val(odontologo.nombre);
-                $("#apellido").val(odontologo.apellido);
-                $("#matricula").val(odontologo.matricula);
-                $("#div_odontologo_updating").css({"display": "block"});
+        //invocamos utilizando la función fetch la API peliculas con el método PUT que modificará
+        //la película que enviaremos en formato JSON
+        const url = '/odontologos';
+        const settings = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            error: function(error){
-                console.log(error);
-                alert("Error -> " + error);
-            }
-        });        
-    });
-});
+            body: JSON.stringify(formData)
+        }
+          fetch(url,settings)
+          .then(response => response.json())
+
+    })
+ })
+
+function findBy(id) {
+          const url = '/odontologos'+"/"+id;
+          const settings = {
+              method: 'GET'
+          }
+          fetch(url,settings)
+          .then(response => response.json())
+          .then(data => {
+              let odontologo = data;
+              document.querySelector('#odontologo_id').value = odontologo.id;
+              document.querySelector('#matricula').value = odontologo.matricula;
+              document.querySelector('#nombre').value = odontologo.nombre;
+              document.querySelector('#apellido').value = odontologo.apellido;
+
+              //el formulario por default esta oculto y al editar se habilita
+              document.querySelector('#div_odontologo_updating').style.display = "block";
+          }).catch(error => {
+              alert("Error: " + error);
+          })
+      }
