@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Listado de pacientes</title>
+  <title>Pacientes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light" style="background-color: #023e8a">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Clinica Muelitas</a>
+    <a class="navbar-brand" href="/html/index.html">🦷Clinica Muelitas🦷</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,6 +40,11 @@
   </div>
 </nav>
 <div class="container">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="/html/index.html">Menú principal</a>
+    </li>
+  </ul>
   <div id="div_paciente_table">
     <h1>Pacientes</h1>
     <div class="row col table-responsive">
@@ -64,7 +69,7 @@
   </div>
   <div class="row">
     <div class="col-sm-8" style="display: none;
-		background-color:#e6fffa; padding:10px; border-radius:3px"
+		background-color:#90e0ef; padding:10px; border-radius:3px"
          id="div_paciente_updating">
       <form id="update_paciente_form">
         <div class="form-group">
@@ -137,7 +142,28 @@
       </div>
     </div>
   </div>
-  <hr>
+  <div class="modal fade" id="delete-modal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Eliminar Paciente</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" id="model-delete-btn">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/js/get_paciente.js"></script>

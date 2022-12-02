@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Clinica Muelitas</title>
+    <title>Turnos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-light"  style="background-color: #023e8a">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/html/index.html">🦷Clinica Muelitas🦷</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/html/index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestión Odontologos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/html/post_odontologo.html">Registrar</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestión Pacientes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/html/post_paciente.html">Registrar</a></li>
+                        <li><a class="dropdown-item" href="/html/get_paciente.html">Listar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="container">
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a class="nav-link" href="/html/get_turno.html">Listar Turnos</a>
+            <a class="nav-link" href="/html/index.html">Menú principal</a>
         </li>
     </ul>
+<div class="container">
     <div class="row">
-        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+        <div class="col-sm-7" style="background-color:#74c69d; padding:10px; border-radius:3px">
             <h3>Agregar Turno</h3>
             <form id="add_new_turno">
                 <div class="form-group">
@@ -24,14 +57,12 @@
                            placeholder="Fecha"
                            name="fecha" required />
                 </div>
-
                 <div class="form-group">
                   <label class="control-label" for="hora">Hora:</label>
                   <input type="text" class="form-control" id="hora"
                          placeholder="hora"
                          name="hora" required>
                 </div>
-
                 <div class="form-group">
                     <label class="control-label" for="paciente_id">ID Paciente:</label>
                     <input type="text" class="form-control" id="paciente_id"
@@ -44,8 +75,6 @@
                            placeholder="ID Odontólogo"
                            name="odontologo_id" required />
                 </div>
-
-
                 <button type="submit" class="btn btn-danger"
                         id="btn-add-new-turno">Guardar</button>
             </form>
