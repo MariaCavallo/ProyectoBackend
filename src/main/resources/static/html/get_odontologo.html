@@ -4,10 +4,11 @@
   <title>Odontologos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light" style="background-color: #023e8a">
+<nav class="navbar navbar-expand-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/html/index.html">🦷Clinica Muelitas🦷</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +37,15 @@
             <li><a class="dropdown-item" href="/html/get_paciente.html">Listar</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gestión Turnos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/html/post_turno.html">Registrar</a></li>
+            <li><a class="dropdown-item" href="/html/get_turno.html">Listar</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
@@ -48,16 +58,16 @@
   </ul>
   <div id="div_odontologo_table">
     <h1>Odontologo</h1>
-    <div class="row col-md-6 table-responsive">
+    <div class="row col table-responsive">
       <table id="odontologoTable" class="table table-striped">
         <thead>
         <tr>
           <th>Id</th>
+          <th>Matricula</th>
           <th>Nombre</th>
           <th>Apellido</th>
-          <th>Matrícula</th>
-          <th>Accion 1</th>
-          <th>Accion 2</th>
+          <th>Actualizar</th>
+          <th>Eliminar</th>
         </tr>
         </thead>
         <tbody id="odontologoTableBody">
@@ -66,24 +76,24 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6" style="display: none;
+    <div class="col-sm-8" style="display: none;
 		background-color:#90e0ef; padding:10px; border-radius:3px"
          id="div_odontologo_updating">
       <form id="update_odontologo_form">
         <div class="form-group">
-          <label for="odontologo_id">Id:</label>
+          <label>Id:</label>
           <input type="text" class="form-control" id="odontologo_id" readonly>
         </div>
         <div class="form-group">
-          <label for="nombre">Nombre:</label>
+          <label class="control-label" for="nombre">Nombre:</label>
           <input type="text" class="form-control" placeholder="nombre" id="nombre">
         </div>
         <div class="form-group">
-          <label for="apellido">Apellido:</label>
+          <label class="control-label" for="apellido">Apellido:</label>
           <input type="text" class="form-control" placeholder="apellido" id="apellido">
         </div>
         <div class="form-group">
-          <label for="matricula">Matrícula:</label>
+          <label class="control-label" for="matricula">Matrícula:</label>
           <input type="text" class="form-control" placeholder="Categoria" id="matricula">
         </div>
 
@@ -94,35 +104,9 @@
       </div>
     </div>
   </div>
-
-  <!-- The Modal -->
-  <div class="modal fade" id="delete-modal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Eliminar odontólogo</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger" id="model-delete-btn">Eliminar</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/update_odontologo.js"></script>
-<script type="text/javascript" src="/js/delete_odontologo.js"></script>
-<script type="text/javascript" src="/js/get_odontologo.js"></script>
-<script type="text/javascript" src="/js/post_odontologo.js"></script>
+<script type="text/javascript" src="../js/odontologo/update_odontologo.js"></script>
+<script type="text/javascript" src="../js/odontologo/delete_odontologo.js"></script>
+<script type="text/javascript" src="../js/odontologo/get_odontologo.js"></script>
 </body>
 </html>

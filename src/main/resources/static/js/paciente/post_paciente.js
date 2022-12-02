@@ -58,5 +58,26 @@ window.addEventListener('load', function () {
                       document.querySelector('#response').style.display = "block";
                      //se dejan todos los campos vacíos por si se quiere ingresar otra pelicula
                      ;})
+
+            function resetUploadForm(){
+                  document.querySelector('#nombre').value = "",
+                  document.querySelector('#apellido').value = "",
+                  document.querySelector('#dni').value = "",
+                  document.querySelector('#fechaIngreso').value = "",
+                  document.querySelector('#email').value = "",
+                  document.querySelector('#calle').value = "",
+                  document.querySelector('#numero').value = "",
+                  document.querySelector('#localidad').value = "",
+                  document.querySelector('#provincia').value = ""
+               }
+
+            (function(){
+                let pathname = window.location.pathname;
+                if(pathname === "/"){
+                     document.querySelector(".nav .nav-item a:first").addClass("active");
+                } else if (pathname == "../../html/get_paciente.html") {
+                     document.querySelector(".nav .nav-item a:last").addClass("active");
+                }
+            })();
     });
 });

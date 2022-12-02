@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
     //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
     //los datos que el usuario cargará de la nueva pelicula
-    const formulario = document.querySelector('#add_new_odontologo');
+    const formulario = document.querySelector('#add_new_turno');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
@@ -70,33 +70,27 @@ window.addEventListener('load', function () {
 
 
     function resetUploadForm(){
-        turno_id: document.querySelector('#turno_id').value = "",
-                    paciente: {
-                        nombre: document.querySelector('#nombre').value = "",
-                        apellido: document.querySelector('#apellido').value = "",
-                        dni: document.querySelector('#dni').value = "",
-                        fechaIngreso: document.querySelector('#fechaIngreso').value = "",
-                        email: document.querySelector('#email').value = "",
-                        domicilio:{
-                              calle: document.querySelector('#calle').value = "",
-                              numero: document.querySelector('#numero').value = "",
-                              localidad: document.querySelector('#localidad').value = "",
-                              provincia: document.querySelector('#provincia').value = "",
-                        }
-                    }
-                    odontologo: {
-                       matricula: document.querySelector('#matricula').value = "",
-                       nombre: document.querySelector('#nombre').value = "",
-                       apellido: document.querySelector('#apellido').value = "",
-                    }
-                    fecha: document.querySelector('#fecha').value = ""
+         document.querySelector('#turno_id').value = "",
+         document.querySelector('#nombre').value = "",
+         document.querySelector('#apellido').value = "",
+         document.querySelector('#dni').value = "",
+         document.querySelector('#fechaIngreso').value = "",
+         document.querySelector('#email').value = "",
+         document.querySelector('#calle').value = "",
+         document.querySelector('#numero').value = "",
+         document.querySelector('#localidad').value = "",
+         document.querySelector('#provincia').value = "",
+         document.querySelector('#matricula').value = "",
+         document.querySelector('#nombre').value = "",
+         document.querySelector('#apellido').value = "",
+         document.querySelector('#fecha').value = ""
     }
 
     (function(){
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/get_turno.html") {
+        } else if (pathname == "../../html/get_turno.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

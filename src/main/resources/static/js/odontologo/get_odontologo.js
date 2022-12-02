@@ -49,7 +49,6 @@ window.addEventListener('load', function () {
                     '<td class=\"td_apellido\">' + odontologo.apellido.toUpperCase() + '</td>' +
                     '<td>' + updateButton + '</td>' +
                     '<td>' + deleteButton + '</td>';
-
         };
 
     })
@@ -57,7 +56,7 @@ window.addEventListener('load', function () {
 
     (function(){
       let pathname = window.location.pathname;
-      if (pathname == "/get_odontologo.html") {
+      if (pathname == "../../html/get_odontologo.html") {
           document.querySelector(".nav .nav-item a:last").addClass("active");
       }
     })

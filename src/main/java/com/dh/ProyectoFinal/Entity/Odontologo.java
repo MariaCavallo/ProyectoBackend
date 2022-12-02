@@ -1,6 +1,8 @@
 package com.dh.ProyectoFinal.Entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Odontologos")
@@ -16,6 +18,9 @@ public class Odontologo {
     private String nombre;
     @Column
     private String apellido;
+
+    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "odontologo")
+    private Set<Turno> turno = new HashSet<>();
 
     public Long getId() {
         return id;

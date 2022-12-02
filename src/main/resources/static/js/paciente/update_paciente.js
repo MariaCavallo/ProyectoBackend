@@ -19,12 +19,12 @@ window.addEventListener('load', function () {
             fechaIngreso: document.querySelector('#fechaIngreso').value,
             email: document.querySelector('#email').value,
             domicilio:{
-                            id: document.querySelector('#domicilio_id').value,
-                            calle: document.querySelector('#calle').value,
-                            numero: document.querySelector('#numero').value,
-                            localidad: document.querySelector('#localidad').value,
-                            provincia: document.querySelector('#provincia').value,
-                            }
+                           id: document.querySelector('#domicilio_id').value,
+                           calle: document.querySelector('#calle').value,
+                           numero: document.querySelector('#numero').value,
+                           localidad: document.querySelector('#localidad').value,
+                           provincia: document.querySelector('#provincia').value,
+                       }
 
         };
 

@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/get_odontologo.html") {
+        } else if (pathname == "../../html/get_odontologo.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

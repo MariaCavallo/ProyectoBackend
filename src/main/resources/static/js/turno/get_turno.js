@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
 
     (function(){
       let pathname = window.location.pathname;
-      if (pathname == "/get_turno.html") {
+      if (pathname == "../../html/get_turno.html") {
           document.querySelector(".nav .nav-item a:last").addClass("active");
       }
     })

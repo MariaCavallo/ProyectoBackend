@@ -34,7 +34,7 @@ public class OdontologoController {
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Odontologo> buscarOdontologoXid (@PathVariable("id") Long id) {
+    public ResponseEntity<Odontologo> buscarOdontologoXid (@PathVariable Long id) {
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
         if (odontologoBuscado.isPresent()){
             return ResponseEntity.ok(odontologoBuscado.get());
