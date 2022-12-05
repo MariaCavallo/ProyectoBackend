@@ -5,6 +5,7 @@ import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import com.dh.ProyectoFinal.Service.OdontologoService;
 import com.dh.ProyectoFinal.Service.PacienteService;
 import com.dh.ProyectoFinal.Service.TurnoService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,8 @@ public class OdontologoController {
     private OdontologoService odontologoService;
     private PacienteService pacienteService;
     private TurnoService turnoService;
+
+    private static final Logger LOGGER = Logger.getLogger(OdontologoController.class);
 
     @Autowired
     public OdontologoController(OdontologoService odontologoService, PacienteService pacienteService, TurnoService turnoService) {
@@ -37,8 +40,10 @@ public class OdontologoController {
     public ResponseEntity<Odontologo> buscarOdontologoXid (@PathVariable Long id) {
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
         if (odontologoBuscado.isPresent()){
+            LOGGER.info("Se econtró el odontologo con id: " + id);
             return ResponseEntity.ok(odontologoBuscado.get());
         } else {
+            LOGGER.error("No se encontó niongun odontologo con el id ingresado, intente nuevamente");
             return  ResponseEntity.badRequest().build();
         }
     }
@@ -48,8 +53,11 @@ public class OdontologoController {
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(odontologo.getId());
         if (odontologoBuscado.isPresent()) {
             odontologoService.actualizarOdontologo(odontologo);
+            LOGGER.info("Se actualizó correctamente el odontologo con apellido: " + odontologo.getApellido());
             return ResponseEntity.ok().body("Se actualizo el odontologo con apellido: " + odontologo.getApellido());
         } else {
+            LOGGER.error("El odontologo con id= " + odontologo.getId() +
+                    " no existe en la Base de Datos, No se puede actualizar algo que no existe!");
             return ResponseEntity.badRequest().body("El odontologo con id= " + odontologo.getId() +
                     " no existe en la Base de Datos, No se puede actualizar algo que no existe!");
         }
@@ -60,8 +68,11 @@ public class OdontologoController {
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
         if (odontologoBuscado.isPresent()) {
             odontologoService.eliminarOdontologo(id);
+            LOGGER.warn("Se elimino el odontologo de id: " + id);
             return ResponseEntity.ok().body("Se elimino el odontologo de id: " + id);
         } else {
+            LOGGER.error("No se encuentra un odontologo con id= " +
+                    id + " . Verificar el ingreso.");
             throw new ResourceNotFoundException("No se encuentra un odontologo con id= " +
                     id + " . Verificar el ingreso.");
         }
@@ -69,6 +80,7 @@ public class OdontologoController {
 
     @GetMapping
     public ResponseEntity<List<Odontologo>> buscarTodosOdontologos () {
+        LOGGER.info("Se listaron todos los odontologos con éxito");
         return ResponseEntity.ok(odontologoService.listarOdontologos());
     }
 }
