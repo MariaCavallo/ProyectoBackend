@@ -24,8 +24,8 @@ public class AddInitialData implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         //cargar un usuario para probar
         BCryptPasswordEncoder cifrador = new BCryptPasswordEncoder();
-        String pssCifrada = cifrador.encode("1234");
-        Usuario usuario = new Usuario("Maria", "Maria", "mariacavallom@gmail.com", pssCifrada, UsuarioRole.ROLE_USER);
+        String passCifrada = cifrador.encode("Maria123");
+        Usuario usuario = new Usuario("Maria", "Maria", "mariacavallom@gmail.com", passCifrada, UsuarioRole.ROLE_USER);
         usuarioRepository.save(usuario);
     }
 

@@ -22,6 +22,13 @@ public class Odontologo {
     @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "odontologo")
     private Set<Turno> turno = new HashSet<>();
 
+
+    public Odontologo(String matricula, String nombre, String apellido) {
+        this.matricula = matricula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public Long getId() {
         return id;
     }

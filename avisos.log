@@ -390,3 +390,12 @@ INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL DNI, DOMICILIO_ID, FECHA_INGRESO)
 [2022-11-17 14:02:11] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Marta
 [2022-11-17 14:02:18] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Teduele
 [2022-11-17 14:02:46] [ INFO ] [OdontologoDAOH2:25] Iniciando el proceso de guardado del odontologo con nombre igual= Pedro
+[2022-12-06 19:28:51] [ INFO ] [PacienteController:30] Se agregó correctamente el paciente PedroCavallo
+[2022-12-06 19:29:23] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito
+[2022-12-06 19:29:27] [ INFO ] [OdontologoController:83] Se listaron todos los odontologos con éxito
+[2022-12-06 19:29:31] [ INFO ] [PacienteController:85] Se listaron todos los pacientes con éxito
+[2022-12-06 19:29:35] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito
+[2022-12-06 19:30:31] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito
+[2022-12-06 19:36:27] [ INFO ] [OdontologoController:83] Se listaron todos los odontologos con éxito
+[2022-12-06 19:36:31] [ INFO ] [PacienteController:85] Se listaron todos los pacientes con éxito
+[2022-12-06 19:36:35] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito

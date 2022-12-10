@@ -62,7 +62,7 @@ public class TurnoService {
     private Turno turnoDTOaTurno (TurnoDTO turnoDTO){
         Turno turno = new Turno();
         Paciente paciente = new Paciente();
-        Odontologo odontologo = new Odontologo();
+        Odontologo odontologo = new Odontologo("24597", "Leonel", "Messi");
         //cargar los elementos
         paciente.setId(turnoDTO.getPacienteId());
         odontologo.setId(turnoDTO.getOdontologoId());
