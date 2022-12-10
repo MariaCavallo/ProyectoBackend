@@ -44,10 +44,8 @@ window.addEventListener('load', function () {
             //como ultima columna el boton eliminar
             turnoRow.innerHTML =
                     '<td class=\"td_id\">' + turno.id + '</td>' +
-                    '<td class=\"td_pacienteNombre\">' + turno.paciente.nombre.toUpperCase() + '</td>' +
-                    '<td class=\"td_pacienteApellido\">' + turno.paciente.apellido.toUpperCase() + '</td>' +
-                    '<td class=\"td_odontologoNombre\">' + turno.odontologo.nombre.toUpperCase() + '</td>' +
-                    '<td class=\"td_odontologoApellido\">' + turno.odontologo.apellido.toUpperCase() + '</td>' +
+                    '<td class=\"td_pacienteId\">' + turno.paciente.id + '</td>' +
+                    '<td class=\"td_odontologoNombre\">' + turno.odontologo.id + '</td>' +
                     '<td class=\"td_fecha\">' + turno.fecha.toUpperCase() + '</td>'
                     '<td>' + updateButton + '</td>' +
                     '<td>' + deleteButton + '</td>';

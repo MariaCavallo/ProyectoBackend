@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
-<body>
+<body style="color: white">
 <nav class="navbar navbar-expand-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/html/index.html">🦷Clinica Muelitas🦷</a>
@@ -69,31 +69,19 @@
                   <label class="control-label" for="hora">Hora:</label>
                   <input type="text" class="form-control" id="hora"
                          placeholder="hora"
-                         name="hora" required>
+                         name="hora" required />
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="nombre">Nombre del paciente:</label>
-                    <input type="text" class="form-control" id="nombre"
-                           placeholder="Ingrese el nombre del paciente"
-                           name="nombre" required />
+                    <label class="control-label" for="id">Id del paciente:</label>
+                    <input type="text" class="form-control" id="id"
+                           placeholder="Ingrese el id del paciente"
+                           name="id" required />
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="apellido">Apellido del paciente:</label>
-                    <input type="text" class="form-control" id="apellido"
-                           placeholder="Ingrese el apellido del paciente"
-                           name="apellido" required />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="nombreOdon">Nombre del odontologo:</label>
-                    <input type="text" class="form-control" id="nombreOdon"
-                           placeholder="Ingrese el nombre del odontologo"
-                           name="nombreOdon" required />
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="apellidoOdon">Apellido del odontologo:</label>
-                    <input type="text" class="form-control" id="apellidoOdon"
-                           placeholder="Ingrese el apellido del odontologo"
-                           name="apelldioOdon" required />
+                    <label class="control-label" for="idOdon">Id del odontologo:</label>
+                    <input type="text" class="form-control" id="idOdon"
+                           placeholder="Ingrese el id del odontologo"
+                           name="idOdon" required />
                 </div>
                 <button type="submit" class="btn btn-danger"
                         id="btn-add-new-turno">Guardar</button>

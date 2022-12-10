@@ -399,3 +399,12 @@ INSERT INTO PACIENTES (NOMBRE, APELLIDO, EMAIL DNI, DOMICILIO_ID, FECHA_INGRESO)
 [2022-12-06 19:36:27] [ INFO ] [OdontologoController:83] Se listaron todos los odontologos con éxito
 [2022-12-06 19:36:31] [ INFO ] [PacienteController:85] Se listaron todos los pacientes con éxito
 [2022-12-06 19:36:35] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito
+[2022-12-10 18:09:02] [ INFO ] [OdontologoController:83] Se listaron todos los odontologos con éxito
+[2022-12-10 18:09:37] [ INFO ] [PacienteController:30] Se agregó correctamente el paciente MariaCavallo
+[2022-12-10 18:10:03] [ INFO ] [PacienteController:30] Se agregó correctamente el paciente MartaMachado
+[2022-12-10 18:10:08] [ INFO ] [PacienteController:85] Se listaron todos los pacientes con éxito
+[2022-12-10 18:10:46] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito
+[2022-12-10 18:44:48] [ INFO ] [OdontologoController:83] Se listaron todos los odontologos con éxito
+[2022-12-10 18:45:10] [ INFO ] [PacienteController:30] Se agregó correctamente el paciente MariaCavallo
+[2022-12-10 18:45:14] [ INFO ] [PacienteController:85] Se listaron todos los pacientes con éxito
+[2022-12-10 18:45:33] [ INFO ] [TurnoController:112] Se listaron todos los turnos con éxito
