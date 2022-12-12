@@ -62,7 +62,7 @@ public class TurnoServiceTest {
     @Order(3)
     public void listarTurnosTest(){
         List<TurnoDTO> turnos = turnoService.listarTurnos();
-        Integer cantEsperada = 0;
+        Integer cantEsperada = 1;
         assertEquals(cantEsperada, turnos.size());
     }
 

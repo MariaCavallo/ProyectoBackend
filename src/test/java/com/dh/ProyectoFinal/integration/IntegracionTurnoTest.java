@@ -37,7 +37,7 @@ public class IntegracionTurnoTest {
         @Autowired
         private MockMvc mockMvc;
 
-        private void cargarTurnoInicial() throws BadRequestException, ResourceNotFoundException {
+        private void cargarTurnoInicial(){
             Domicilio domicilio= new Domicilio("Calle a",234,"Localidad a","Provincia a");
             Paciente pacienteAGuardar= new Paciente("Maria","Cavallo","5451", LocalDate.of(2022,12,7),"prueba@gmail.com",domicilio);
             Paciente pacienteGuardado=pacienteService.guardarPaciente(pacienteAGuardar);
