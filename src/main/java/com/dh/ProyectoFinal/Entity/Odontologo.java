@@ -1,5 +1,6 @@
 package com.dh.ProyectoFinal.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,8 @@ public class Odontologo {
     @Column
     private String apellido;
 
-    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "odontologo")
+    @OneToMany( mappedBy = "odontologo")
+    @JsonIgnore
     private Set<Turno> turno = new HashSet<>();
 
 

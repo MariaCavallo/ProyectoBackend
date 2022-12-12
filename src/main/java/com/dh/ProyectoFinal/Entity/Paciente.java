@@ -1,7 +1,6 @@
 package com.dh.ProyectoFinal.Entity;
 
 import javax.persistence.*;
-import com.dh.ProyectoFinal.Entity.Domicilio;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +26,7 @@ public class Paciente {
     @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
 
-    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, mappedBy = "paciente")
+    @OneToMany(mappedBy = "paciente")
     private Set<Turno> turno = new HashSet<>();
     public Paciente() {
     }

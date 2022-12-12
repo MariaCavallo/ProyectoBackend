@@ -2,6 +2,7 @@ package com.dh.ProyectoFinal.Controller;
 
 import com.dh.ProyectoFinal.DTO.TurnoDTO;
 import com.dh.ProyectoFinal.Entity.Turno;
+import com.dh.ProyectoFinal.Exception.BadRequestException;
 import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import com.dh.ProyectoFinal.Repository.OdontologoRepository;
 import com.dh.ProyectoFinal.Repository.PacienteRepository;
@@ -20,10 +21,9 @@ import java.util.Optional;
 @RequestMapping("/turnos")
 public class TurnoController {
 
-
-    private TurnoService turnoService;
-    private PacienteService pacienteService;
-    private OdontologoService odontologoService;
+    private final TurnoService turnoService;
+    private final PacienteService pacienteService;
+    private final OdontologoService odontologoService;
 
     private PacienteRepository pacienteRepository;
     private OdontologoRepository odontologoRepository;
@@ -38,63 +38,27 @@ public class TurnoController {
     }
 
     @PostMapping
-    public ResponseEntity<TurnoDTO> guardarTurno (@RequestBody TurnoDTO turno) {
-        PacienteService pacienteService = new PacienteService(pacienteRepository);
-        OdontologoService odontologoService = new OdontologoService(odontologoRepository);
+    public ResponseEntity<TurnoDTO> guardarTurno(@RequestBody TurnoDTO turnoDTO) throws BadRequestException, ResourceNotFoundException {
         ResponseEntity<TurnoDTO> respuesta;
-
-        if (pacienteService.buscarPaciente(turno.getPacienteId()).isPresent() &&
-                odontologoService.buscarOdontologoXId(turno.getOdontologoId()).isPresent()){
-            LOGGER.info("Se agregó correctamente el turno con id: " + turno.getId());
-            respuesta = ResponseEntity.ok(turnoService.guardarTurno(turno));
-        } else {
-            LOGGER.error("No se pudo agregar el turno con id: " + turno.getId());
-            respuesta = ResponseEntity.badRequest().build();
+        if (pacienteService.buscarPaciente(turnoDTO.getPacienteId()).isPresent()&&
+                odontologoService.buscarOdontologo(turnoDTO.getOdontologoId()).isPresent()
+        ){
+            respuesta=ResponseEntity.ok(turnoService.guardarTurno(turnoDTO));
+        }
+        else{
+            throw new BadRequestException("No se puede registrar un turno cuando no exista un odontologo y/o un paciente");
         }
         return respuesta;
     }
 
-    @GetMapping("/buscar/{id}")
-    public ResponseEntity<TurnoDTO> buscarTurno (@PathVariable("id") Long id) {
-        Optional<TurnoDTO> turnoBuscado = turnoService.buscarTurno(id);
-        if (turnoBuscado.isPresent()){
-            LOGGER.info("Se encontró el turno con id: " + id);
-            return ResponseEntity.ok(turnoBuscado.get());
-        } else {
-            LOGGER.error("No se encontró ningun turno con id: " + id + " Verifique que el turno exista");
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
     @PutMapping
-    public ResponseEntity<String> actualizarTurno (@RequestBody TurnoDTO turno) {
-        PacienteService pacienteService = new PacienteService(pacienteRepository);
-        OdontologoService odontologoService = new OdontologoService(odontologoRepository);
-        ResponseEntity<Turno> respuesta;
-
-        if (turnoService.buscarTurno(turno.getId()).isPresent()){
-
-            if (pacienteService.buscarPaciente(turno.getPacienteId()).isPresent() &&
-                    odontologoService.buscarOdontologoXId(turno.getOdontologoId()).isPresent()){
-                turnoService.actualizarTurno(turno);
-                LOGGER.info("Se actualizo el turno de id: " + turno.getId());
-                return ResponseEntity.ok().body("Se actualizo el turno de id: " + turno.getId());
-            } else {
-                LOGGER.error("Error al actualizar el turno con el id= " + turno.getId() +
-                        "Verificar si el odontologo y/o el paciente existen en la base de datos.");
-                return ResponseEntity.badRequest().body("Error al actualizar el turno con el id= " + turno.getId() +
-                        "Verificar si el odontologo y/o el paciente existen en la base de datos.");
-                }
-            } else {
-            LOGGER.error("No se puede actualizar el turno con el id= " + turno.getId() +
-                    "Ese turno no existe en la base de datos!");
-            return ResponseEntity.badRequest().body("No se puede actualizar el turno con el id= " + turno.getId() +
-                    "Ese turno no existe en la base de datos!");
-        }
+    public ResponseEntity<String> actualizarTurno (@RequestBody TurnoDTO turno) throws BadRequestException, ResourceNotFoundException {
+        turnoService.actualizarTurno(turno);
+        return ResponseEntity.ok("Se actualizó el turno con id=" + turno.getId());
     }
 
-    @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<String> eliminarTurno (@PathVariable Long id) throws ResourceNotFoundException{
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<String> eliminarTurno (@PathVariable Long id) throws ResourceNotFoundException, BadRequestException {
         if (turnoService.buscarTurno(id).isPresent()){
             turnoService.eliminarTurno(id);
             LOGGER.warn("Se elimino el turno con id= " + id);
@@ -107,9 +71,13 @@ public class TurnoController {
         }
     }
 
+    @GetMapping("/buscar/{id}")
+    public ResponseEntity<TurnoDTO> buscarTurno(@PathVariable("id") Long id) throws BadRequestException, ResourceNotFoundException {
+        return ResponseEntity.ok(turnoService.buscarTurno(id).get());
+    }
     @GetMapping
-    public ResponseEntity<List<TurnoDTO>> buscarTodosTurnos () {
+    public ResponseEntity<List<TurnoDTO>> listarTurnos () {
         LOGGER.info("Se listaron todos los turnos con éxito");
-        return ResponseEntity.ok(turnoService.buscarTodosTurno());
+        return ResponseEntity.ok(turnoService.listarTurnos());
     }
 }

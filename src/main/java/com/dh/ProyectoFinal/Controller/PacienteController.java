@@ -32,7 +32,7 @@ public class PacienteController {
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Paciente> buscarPacienteXid (@PathVariable("id") Long id) {
+    public ResponseEntity<Paciente> buscarPacienteXid (@PathVariable("id") Long id) throws ResourceNotFoundException {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(id);
         if (pacienteBuscado.isPresent()) {
             LOGGER.info("Se econtró el paciente con id: " + id);
@@ -43,13 +43,13 @@ public class PacienteController {
         }
     }
     @GetMapping("/buscar/mail")
-    public ResponseEntity<Optional<Paciente>> buscarPacienteXemail (@RequestParam("email") String string) {
+    public ResponseEntity<Optional<Paciente>> buscarPacienteXemail (@RequestParam("email") String string) throws ResourceNotFoundException {
         LOGGER.info("Se econtró el paciente con el mail: " + string);
-        return ResponseEntity.ok(pacienteService.buscarByEmail(string));
+        return ResponseEntity.ok(pacienteService.buscarPorEmail(string));
     }
 
     @PutMapping("/actualizar")
-    public ResponseEntity<String> actualizarPaciente (@RequestBody Paciente paciente) {
+    public ResponseEntity<String> actualizarPaciente (@RequestBody Paciente paciente) throws ResourceNotFoundException {
         Optional<Paciente> pacienteBuscado = pacienteService.buscarPaciente(paciente.getId());
         if (pacienteBuscado.isPresent()) {
             pacienteService.actualizarPaciente(paciente);
@@ -83,6 +83,6 @@ public class PacienteController {
     @GetMapping
     public ResponseEntity<List<Paciente>> buscarTodosPacientes () {
         LOGGER.info("Se listaron todos los pacientes con éxito");
-        return ResponseEntity.ok(pacienteService.buscarTodosPacientes());
+        return ResponseEntity.ok(pacienteService.listarPacientes());
     }
 }

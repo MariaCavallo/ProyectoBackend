@@ -1,6 +1,7 @@
 package com.dh.ProyectoFinal.Controller;
 
 import com.dh.ProyectoFinal.Entity.Odontologo;
+import com.dh.ProyectoFinal.Exception.BadRequestException;
 import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import com.dh.ProyectoFinal.Service.OdontologoService;
 import com.dh.ProyectoFinal.Service.PacienteService;
@@ -37,8 +38,8 @@ public class OdontologoController {
     }
 
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<Odontologo> buscarOdontologoXid (@PathVariable Long id) {
-        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
+    public ResponseEntity<Odontologo> buscarOdontologo (@PathVariable Long id) throws ResourceNotFoundException {
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologo(id);
         if (odontologoBuscado.isPresent()){
             LOGGER.info("Se econtró el odontologo con id: " + id);
             return ResponseEntity.ok(odontologoBuscado.get());
@@ -49,8 +50,8 @@ public class OdontologoController {
     }
 
     @PutMapping("/actualizar")
-    public ResponseEntity<String> actualizarOdontologo (@RequestBody Odontologo odontologo) {
-        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(odontologo.getId());
+    public ResponseEntity<String> actualizarOdontologo (@RequestBody Odontologo odontologo) throws ResourceNotFoundException {
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologo(odontologo.getId());
         if (odontologoBuscado.isPresent()) {
             odontologoService.actualizarOdontologo(odontologo);
             LOGGER.info("Se actualizó correctamente el odontologo con apellido: " + odontologo.getApellido());
@@ -64,8 +65,8 @@ public class OdontologoController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public ResponseEntity<String> eliminarOdontologo (@PathVariable Long id) throws ResourceNotFoundException{
-        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(id);
+    public ResponseEntity<String> eliminarOdontologo (@PathVariable Long id) throws ResourceNotFoundException, BadRequestException {
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologo(id);
         if (odontologoBuscado.isPresent()) {
             odontologoService.eliminarOdontologo(id);
             LOGGER.warn("Se elimino el odontologo de id: " + id);

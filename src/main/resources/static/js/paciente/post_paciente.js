@@ -20,7 +20,6 @@ window.addEventListener('load', function () {
                 localidad: document.querySelector('#localidad').value,
                 provincia: document.querySelector('#provincia').value,
             }
-
         };
         //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
         //la película que enviaremos en formato JSON

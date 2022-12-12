@@ -43,11 +43,10 @@ window.addEventListener('load', function () {
             //luego los datos de la pelicula
             //como ultima columna el boton eliminar
             odontologoRow.innerHTML =
-                    '<td class=\"td_id\">' + odontologo.id + '</td>' +
+                    '<td>' + updateButton + '</td>' +
                     '<td class=\"td_dni\">' + odontologo.matricula.toUpperCase() + '</td>' +
                     '<td class=\"td_nombre\">' + odontologo.nombre.toUpperCase() + '</td>' +
                     '<td class=\"td_apellido\">' + odontologo.apellido.toUpperCase() + '</td>' +
-                    '<td>' + updateButton + '</td>' +
                     '<td>' + deleteButton + '</td>';
         };
 

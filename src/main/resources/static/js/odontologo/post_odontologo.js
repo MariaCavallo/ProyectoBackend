@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
         const formData = {
             matricula: document.querySelector('#matricula').value,
             nombre: document.querySelector('#nombre').value,
-            apellido: document.querySelector('#apellido').value,
+            apellido: document.querySelector('#apellido').value
 
         };
         //invocamos utilizando la función fetch la API peliculas con el método POST que guardará
@@ -57,7 +57,6 @@ window.addEventListener('load', function () {
         document.querySelector('#matricula').value = "";
         document.querySelector('#nombre').value = "";
          document.querySelector('#apellido').value = "";
-
     }
 
     (function(){

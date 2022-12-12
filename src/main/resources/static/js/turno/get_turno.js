@@ -19,6 +19,7 @@ window.addEventListener('load', function () {
             var turnoRow =table.insertRow();
             let tr_id = 'tr_' + turno.id;
             turnoRow.id = tr_id;
+            console.log(turno)
 
             //por cada pelicula creamos un boton delete que agregaremos en cada fila para poder eliminar la misma
             //dicho boton invocara a la funcion de java script deleteByKey que se encargará
@@ -43,11 +44,10 @@ window.addEventListener('load', function () {
             //luego los datos de la pelicula
             //como ultima columna el boton eliminar
             turnoRow.innerHTML =
-                    '<td class=\"td_id\">' + turno.id + '</td>' +
-                    '<td class=\"td_pacienteId\">' + turno.paciente.id + '</td>' +
-                    '<td class=\"td_odontologoNombre\">' + turno.odontologo.id + '</td>' +
-                    '<td class=\"td_fecha\">' + turno.fecha.toUpperCase() + '</td>'
                     '<td>' + updateButton + '</td>' +
+                    '<td class=\"td_fecha\">' + turno.fecha + '</td>' +
+                    '<td class=\"td_paciente_id\">' + turno.pacienteId + '</td>' +
+                    '<td class=\"td_odontologo_id\">' + turno.odontologoId + '</td>' +
                     '<td>' + deleteButton + '</td>';
 
         };

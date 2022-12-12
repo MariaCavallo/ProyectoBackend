@@ -27,6 +27,9 @@ public class AddInitialData implements ApplicationRunner {
         String passCifrada = cifrador.encode("Maria123");
         Usuario usuario = new Usuario("Maria", "Maria", "mariacavallom@gmail.com", passCifrada, UsuarioRole.ROLE_USER);
         usuarioRepository.save(usuario);
+        usuario=new Usuario("Magu","Magu","magucavallo@gmail.com",
+                passCifrada, UsuarioRole.ROLE_ADMIN);
+        usuarioRepository.save(usuario);
     }
 
 }

@@ -1,7 +1,6 @@
 package com.dh.ProyectoFinal.Entity;
 
 import javax.persistence.*;
-import com.dh.ProyectoFinal.Entity.Odontologo;
 import java.time.LocalDate;
 
 @Entity
@@ -11,10 +10,10 @@ public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "paciente_id", referencedColumnName = "id")
     private Paciente paciente;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "odontologo_id", referencedColumnName = "id")
     private Odontologo odontologo;
     @Column

@@ -17,7 +17,7 @@ public class GlobalException {
     }
 
     @ExceptionHandler({BadRequestException.class})
-    public ResponseEntity<String> procesarBasRequest(BadRequestException bre){
+    public ResponseEntity<String> procesarBadRequestException(BadRequestException bre){
         LOGGER.error("ERROR: " + bre.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bre.getMessage());
     }

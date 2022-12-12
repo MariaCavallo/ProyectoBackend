@@ -1,6 +1,8 @@
 package com.dh.ProyectoFinal.Service;
 
 import com.dh.ProyectoFinal.Entity.Odontologo;
+import com.dh.ProyectoFinal.Exception.BadRequestException;
+import com.dh.ProyectoFinal.Exception.ResourceNotFoundException;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -26,40 +28,44 @@ class OdontologoServiceTest {
         Odontologo odontologoAGuardar = new Odontologo("24597", "Leonel", "Messi");
         Odontologo odontologoGuardado = odontologoService.guardarOdontologo(odontologoAGuardar);
         assertEquals(1L, odontologoGuardado.getId());
+        assertEquals("Leonel", odontologoGuardado.getNombre());
     }
 
     @Test
     @Order(2)
-    public void buscarOdontologoPorIdTest(){
+    public void buscarOdontologoPorIdTest() throws ResourceNotFoundException {
         Long idABuscar=1L;
-        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologoXId(idABuscar);
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarOdontologo(idABuscar);
         assertNotNull(odontologoBuscado.get());
     }
 
     @Test
     @Order(3)
-    public void buscarOdontologosTest(){
+    public void listarOdontologosTest(){
         List<Odontologo> odontologos = odontologoService.listarOdontologos();
-        //por cantidad de pacientes
         Integer cantEsperada = 1;
         assertEquals(cantEsperada, odontologos.size());
     }
 
     @Test
     @Order(4)
-    public void actualizarOdontologoTest(){
+    public void actualizarOdontologoTest() throws ResourceNotFoundException {
         Odontologo odontologoAActualizar = new Odontologo("24597", "Leonel", "Messi");
+        odontologoService.guardarOdontologo(odontologoAActualizar);
         odontologoService.actualizarOdontologo(odontologoAActualizar);
-        Optional<Odontologo> odontologoActualizado = odontologoService.buscarOdontologoXId(odontologoAActualizar.getId());
-        assertEquals("Messi", odontologoActualizado.get().getMatricula());
+        Optional<Odontologo> odontologoActualizado = odontologoService.buscarOdontologo(odontologoAActualizar.getId());
+        assertEquals("Messi", odontologoActualizado.get().getApellido());
     }
 
     @Test
     @Order(5)
-    public void eliminarOdontologoTest(){
+    public void eliminarOdontologoTest() throws ResourceNotFoundException {
         Long idAEliminar = 1L;
         odontologoService.eliminarOdontologo(idAEliminar);
-        Optional<Odontologo> odontologoEliminado = odontologoService.buscarOdontologoXId(idAEliminar);
-        assertFalse(odontologoEliminado.isPresent());
+        ResourceNotFoundException rnte = assertThrows(
+                ResourceNotFoundException.class,
+                () -> odontologoService.buscarOdontologo(idAEliminar)
+        );
+        assertTrue(rnte.getMessage().contains("No se encontró ningún odontólogo con id=" + idAEliminar));
     }
 }
